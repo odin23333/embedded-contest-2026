@@ -1,0 +1,46 @@
+[
+  {
+    "file": "01_welcome.bmp",
+    "source_dimensions": [
+      320,
+      240
+    ],
+    "bytes": 921654,
+    "sha256": "4c3d3a1864bef8ff782aa5017c6d2b90cabc06aab9026cda53822a96fdbb4027",
+    "original_sha256": "cee392b3b8f00296530213ff55d2a538c57a57d0d4ef0331356cf82ee1c5b08a",
+    "original_file_allocation_preserved": true
+  },
+  {
+    "file": "02_notice.bmp",
+    "source_dimensions": [
+      800,
+      300
+    ],
+    "bytes": 921654,
+    "sha256": "0e3008f2cef3b87d2521dff27f3727fed59ad4a1466037088d8a63b2965add39",
+    "original_sha256": "a3cb997ffc6fe11554a043a45c3ae615c9e794e17ddcc17d8afebc4fc40af1f8",
+    "original_file_allocation_preserved": true
+  },
+  {
+    "file": "03_display_check.bmp",
+    "source_dimensions": [
+      301,
+      601
+    ],
+    "bytes": 921654,
+    "sha256": "97a8179eeba33119e9a0caa2d990b9c7a7fcb2ffa23c00bc40d7a921fef4616d",
+    "original_sha256": "be9150e870a94a5830f5d991a5a4bc6134d92a0d8f46c530cd0bfef3af33525b",
+    "original_file_allocation_preserved": true
+  },
+  {
+    "file": "04_emergency_demo.bmp",
+    "source_dimensions": [
+      640,
+      480
+    ],
+    "bytes": 921654,
+    "sha256": "561203e141e56bf66e2a8274f73c8adcbbc26fc5da03cfa2efedd124c7c9cc95",
+    "original_sha256": "7bb328a5647f617ee27b9148597e8106b9c82649fa46867b892d18e974d19deb",
+    "original_file_allocation_preserved": true
+  }
+]

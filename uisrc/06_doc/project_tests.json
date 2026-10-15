@@ -1,0 +1,200 @@
+[
+  {
+    "test": "video_axis_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "audio_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "bmp_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "frame_write_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "audio_modes_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_ALARM_SYNC/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "ddr_adapter_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "migration_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "playback_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "axis_buffer_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "compositor_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_ALARM_SYNC/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "system_response_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "system_fault_response_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "storage_watchdog_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "stability_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "bmp_pixel_bounds_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "card_state_loss_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "source_handshake_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "bmp_fault_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "brightness_top_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "brightness_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "brightness_compositor_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "fade_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "fade_storage_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "timestamp_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "time_uart_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "rtc_time_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "i2c_enable_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "historical retained, not rerun for scaling revision"
+  },
+  {
+    "test": "alarm_sync_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "prefetch_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "buffer_retirement_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
+    "scope": "fresh scaling candidate test, relevant source promoted"
+  },
+  {
+    "test": "scaled_bmp_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "fresh canonical scaling regression"
+  },
+  {
+    "test": "scaled_fault_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "fresh canonical scaling regression"
+  },
+  {
+    "test": "write_start_tb",
+    "result": "PASS",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
+    "scope": "fresh canonical scaling regression"
+  }
+]

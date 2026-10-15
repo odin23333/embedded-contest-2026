@@ -1,0 +1,34 @@
+[
+  {
+    "test": "scale_1x2048",
+    "pass": true,
+    "source_size": [
+      1,
+      2048
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      1,
+      480
+    ]
+  },
+  {
+    "test": "scale_2048x1",
+    "pass": true,
+    "source_size": [
+      2048,
+      1
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      1
+    ]
+  }
+]

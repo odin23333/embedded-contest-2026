@@ -1,0 +1,30 @@
+# TD build databases and temporary state
+fpga_prj_Runs/
+*_Runs/
+*.al.cache
+*.al.lock
+*.al.user
+*.bak
+*.tmp
+*.db
+# Generated simulation executables/logs; keep JSON acceptance evidence
+reports/*.vvp
+reports/*.log
+__pycache__/
+*.pyc
+# Machine-specific tool configuration
+scripts/tool_paths.json
+# Unused reference song conversion data; retained locally and in full ZIP
+uisrc/01_rtl/python/1.wav
+uisrc/01_rtl/python/song_48k.mif
+uisrc/01_rtl/python/song_48k.mif.dath
+# Credentials and local editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

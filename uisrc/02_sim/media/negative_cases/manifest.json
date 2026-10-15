@@ -1,0 +1,46 @@
+{
+  "source": "03_display_check.bmp",
+  "cases": [
+    {
+      "file": "width_high.bmp",
+      "expected": "header_rejected",
+      "sha256": "8614f1aba72b42fff16e4e08415b0135be8238758f087ceb07697e746f5d73a1"
+    },
+    {
+      "file": "height_high.bmp",
+      "expected": "header_rejected",
+      "sha256": "86d3b12532d549257f5f79adff2523dabfc347a22239cbd2605be1f917cb365f"
+    },
+    {
+      "file": "planes_zero.bmp",
+      "expected": "header_rejected",
+      "sha256": "aa60a38e7d218fddaf24b399119cba5a6b78e2495f2e2a61827a2839b24d8d45"
+    },
+    {
+      "file": "dib_too_small.bmp",
+      "expected": "header_rejected",
+      "sha256": "c72d3c15b6a03aa91aeb192e539b42d3c82e6d5ebfab7d70e32e184011c09863"
+    },
+    {
+      "file": "offset_zero.bmp",
+      "expected": "header_rejected",
+      "sha256": "5f32bf7dd31e1e87bb4f950c082661509bebee83ac7ce06a538a7a5b768717a0"
+    },
+    {
+      "file": "length_short.bmp",
+      "expected": "header_rejected",
+      "sha256": "b99de9e64a4e5ba6d9c6bf554c9a372a85e31ef8475629bdf2c28db306d63945"
+    },
+    {
+      "file": "offset_overflow.bmp",
+      "expected": "header_rejected",
+      "sha256": "177ce065b1f9a98a809850b04d05a74be9638a679eaf77d6655a7c2ebe473073"
+    },
+    {
+      "file": "bpp32.bmp",
+      "expected": "header_rejected",
+      "sha256": "61b5a9401b51af916b090a423a70d0c60af6c8aabd89398cd0c94194c49c49fd"
+    }
+  ],
+  "note": "Local negative-format fixtures; not written to a TF card"
+}

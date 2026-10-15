@@ -1,0 +1,130 @@
+[
+  {
+    "test": "scale_1x1",
+    "pass": true,
+    "source_size": [
+      1,
+      1
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      480,
+      480
+    ]
+  },
+  {
+    "test": "scale_3x2",
+    "pass": true,
+    "source_size": [
+      3,
+      2
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      426
+    ]
+  },
+  {
+    "test": "scale_320x240",
+    "pass": true,
+    "source_size": [
+      320,
+      240
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      480
+    ]
+  },
+  {
+    "test": "scale_640x480",
+    "pass": true,
+    "source_size": [
+      640,
+      480
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      480
+    ]
+  },
+  {
+    "test": "scale_800x600",
+    "pass": true,
+    "source_size": [
+      800,
+      600
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      480
+    ]
+  },
+  {
+    "test": "scale_1280x720",
+    "pass": true,
+    "source_size": [
+      1280,
+      720
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      360
+    ]
+  },
+  {
+    "test": "scale_301x601",
+    "pass": true,
+    "source_size": [
+      301,
+      601
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      240,
+      480
+    ]
+  },
+  {
+    "test": "scale_1920x1080",
+    "pass": true,
+    "source_size": [
+      1920,
+      1080
+    ],
+    "output_size": [
+      640,
+      480
+    ],
+    "fit": [
+      640,
+      360
+    ]
+  }
+]

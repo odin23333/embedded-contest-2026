@@ -1,0 +1,39 @@
+{
+  "font": "C:\\Windows\\Fonts\\msyh.ttc",
+  "font_sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+  "lines": [
+    {
+      "name": "title",
+      "text": "紧急提示",
+      "source_width": 64,
+      "left": 192,
+      "top": 80,
+      "scale": 4
+    },
+    {
+      "name": "calm",
+      "text": "请保持冷静",
+      "source_width": 80,
+      "left": 240,
+      "top": 190,
+      "scale": 2
+    },
+    {
+      "name": "guide",
+      "text": "听从现场指引",
+      "source_width": 96,
+      "left": 224,
+      "top": 260,
+      "scale": 2
+    },
+    {
+      "name": "keys",
+      "text": "KEY3 返回   KEY4 静音",
+      "source_width": 272,
+      "left": 184,
+      "top": 365,
+      "scale": 1
+    }
+  ],
+  "rtl_sha256": "4c37bd12cba7502b18e6d69010010268b5dd40e4ddb2e74a01a508139a1b836d"
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-14",
+  "tutorial_sha256": "60765a1a63dc65d3fe7be3abd5a0bd402b99b61a4baadbb0c85d5317bd279c67",
+  "tutorial_pages": 69,
+  "tutorial_structure_page": 27,
+  "project": "fpga_prj.al",
+  "source_project": "MLK_S200 current scaling guard",
+  "complete_build_in_independent_directory": true,
+  "relative_project_references": true,
+  "standalone_tests": [
+    {
+      "test": "scaled_bmp_tb",
+      "result": "PASS",
+      "scope": "fresh independent package source"
+    },
+    {
+      "test": "scaled_fault_tb",
+      "result": "PASS",
+      "scope": "fresh independent package source"
+    },
+    {
+      "test": "write_start_tb",
+      "result": "PASS",
+      "scope": "fresh independent package source"
+    }
+  ],
+  "build": {
+    "device": "EG4D20EG176",
+    "top": "top",
+    "fresh_bit": true,
+    "inputs_unchanged": true,
+    "sha256": "0b264454b1485cf1f1b161cdec2c75c34218616fb33695a8deba5ecbce140d21",
+    "critical_warnings": [
+      "PHY-7002 CRITICAL-WARNING: Instance U3/u_ddr_sdram location (12, 12) is not honored. Cell's initial location is not legal at the beginning of ECO placement, and will be moved during placement. Please verify user location constraints through the adc file.",
+      "PHY-7002 CRITICAL-WARNING: Instance U3/u_ddr_sdram location (164, 288) is not honored. Cell's initial location is not legal at the beginning of ECO placement, and will be moved during placement. Please verify user location constraints through the adc file."
+    ],
+    "physically_downloaded": false,
+    "SWNS": 0.549,
+    "HWNS": 0.003,
+    "timing_pass": true
+  },
+  "tested_bit_sha256": "1b076ea04e60219b5d40adbcbfd2c4ab08bc3dcc93a812f22128b1a973620dd3",
+  "new_bit_physically_downloaded": false,
+  "flash_written": false,
+  "full_33_suite_rerun": false,
+  "native_al_open_pass": true
+}

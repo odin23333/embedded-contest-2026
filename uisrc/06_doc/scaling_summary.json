@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-13",
+  "feature": "aspect-fit BMP scaling with FIFO reset-release guard",
+  "physical_verified": true,
+  "canonical_promoted": true,
+  "observations_source": "user replies",
+  "physical_source_sizes": [
+    "320x240",
+    "800x300",
+    "301x601",
+    "640x480"
+  ],
+  "physical_idle_observation_seconds": 30,
+  "physical_idle_fault": false,
+  "physical_auto_prefetch_fade_emergency_mute_timestamp": "all normal",
+  "output_resolution": "640x480",
+  "sink_resolution_independently_reported": false,
+  "input_format": "bottom-up uncompressed BI_RGB 24-bit BMP, width and height 1..2048",
+  "algorithm": "pixel-center nearest neighbor, aspect-fit, centered black bars",
+  "tested_bit_sha256": "1b076ea04e60219b5d40adbcbfd2c4ab08bc3dcc93a812f22128b1a973620dd3",
+  "download_wall_seconds": 4.796815,
+  "builds": {
+    "project_build": {
+      "inputs_unchanged_during_build": true,
+      "device": "EG4D20EG176",
+      "board": "MLK-S200",
+      "bit_exists": true,
+      "process_exit": 0,
+      "fresh_bit": true,
+      "critical_warnings": [
+        "PHY-7002 CRITICAL-WARNING: Instance U3/u_ddr_sdram location (12, 12) is not honored. Cell's initial location is not legal at the beginning of ECO placement, and will be moved during placement. Please verify user location constraints through the adc file.",
+        "PHY-7002 CRITICAL-WARNING: Instance U3/u_ddr_sdram location (164, 288) is not honored. Cell's initial location is not legal at the beginning of ECO placement, and will be moved during placement. Please verify user location constraints through the adc file."
+      ],
+      "errors": [],
+      "bytes": 629624,
+      "sha256": "cc3f985ec878a2dc4f30a8df1f257b0c59fc742e30cf6efa9be8bb78c9f61532",
+      "SWNS": 0.549,
+      "STNS": 0.0,
+      "HWNS": 0.003,
+      "HTNS": 0.0,
+      "timing_pass": true,
+      "sta_coverage_percent": 99.79,
+      "physically_downloaded": false
+    },
+    "project_brightness_build": {
+      "inputs_unchanged_during_build": true,
+      "device": "EG4D20EG176",
+      "board": "MLK-S200",
+      "bit_exists": true,
+      "process_exit": 0,
+      "fresh_bit": true,
+      "critical_warnings": [
+        "PHY-7002 CRITICAL-WARNING: Instance player/U3/u_ddr_sdram location (12, 12) is not honored. Cell's initial location is not legal at the beginning of ECO placement, and will be moved during placement. Please verify user location constraints through the adc file.",
+        "PHY-7002 CRITICAL-WARNING: Instance player/U3/u_ddr_sdram location (164, 288) is not honored. Cell's initial location is not legal at the beginning of ECO placement, and will be moved during placement. Please verify user location constraints through the adc file."
+      ],
+      "errors": [],
+      "bytes": 629635,
+      "sha256": "75d3f530b44e46de01c6d41468498f4a0fb0aa9b80a19e1c39a9a9f34094dc5b",
+      "SWNS": 0.117,
+      "STNS": 0.0,
+      "HWNS": 0.003,
+      "HTNS": 0.0,
+      "timing_pass": true,
+      "sta_coverage_percent": 99.79,
+      "physically_downloaded": false
+    }
+  },
+  "recompiled_bits_physically_downloaded": false,
+  "optional_brightness_physically_verified": false,
+  "fresh_unique_regular_suite_count": 11,
+  "canonical_fresh_reruns": [
+    "scaled_bmp_tb",
+    "scaled_fault_tb",
+    "write_start_tb"
+  ],
+  "additional_exact_pixel_dimension_cases": 10,
+  "total_recorded_player_suites": 33,
+  "aggregate_recorded_suites": 41,
+  "full_suite_rerun": false,
+  "failed_initial_candidate_accepted": false,
+  "fault_cause": "producer released before vendor FIFO synchronous reset; 512 produced but 511 accepted, incomplete final burst",
+  "fix": "three write-clock reset-release barrier; actual vendor FIFO test accepts and writes all 512 words",
+  "flash_written": false,
+  "long_physical_run_verified": false,
+  "limitations": [
+    "nearest-neighbor may show enlarged pixel edges",
+    "JPEG/PNG/compressed or top-down BMP unsupported",
+    "contiguous-sector scanner retained",
+    "old firmware rollback requires restoring original 640x480 TF files"
+  ]
+}

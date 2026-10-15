@@ -1,0 +1,33 @@
+set_pin_assignment { clk } { LOCATION = P157; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { HDMI_CLK_P } { LOCATION = P61; IOSTANDARD = LVDS33_E; PULLTYPE = NONE; }
+set_pin_assignment { HDMI_D0_P } { LOCATION = P52; IOSTANDARD = LVDS33_E; PULLTYPE = NONE; }
+set_pin_assignment { HDMI_D1_P } { LOCATION = P53; IOSTANDARD = LVDS33_E; PULLTYPE = NONE; }
+set_pin_assignment { HDMI_D2_P } { LOCATION = P58; IOSTANDARD = LVDS33_E; PULLTYPE = NONE; }
+set_pin_assignment { HDMI_DDC_SCL } { LOCATION = P49; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { HDMI_DDC_SDA } { LOCATION = P50; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { sd_ncs } { LOCATION = P39; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { sd_dclk } { LOCATION = P25; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { sd_mosi } { LOCATION = P35; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { sd_miso } { LOCATION = P19; IOSTANDARD = LVCMOS25; PULLTYPE = PULLUP; }
+set_pin_assignment { key_col[0] } { LOCATION = P119; IOSTANDARD = LVCMOS25; PULLTYPE = PULLUP; }
+set_pin_assignment { key_col[1] } { LOCATION = P118; IOSTANDARD = LVCMOS25; PULLTYPE = PULLUP; }
+set_pin_assignment { key_col[2] } { LOCATION = P115; IOSTANDARD = LVCMOS25; PULLTYPE = PULLUP; }
+set_pin_assignment { key_col[3] } { LOCATION = P114; IOSTANDARD = LVCMOS25; PULLTYPE = PULLUP; }
+set_pin_assignment { key_row[0] } { LOCATION = P112; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { key_row[1] } { LOCATION = P109; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { key_row[2] } { LOCATION = P104; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { key_row[3] } { LOCATION = P91; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[0] } { LOCATION = P89; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[1] } { LOCATION = P90; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[2] } { LOCATION = P94; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[3] } { LOCATION = P93; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[4] } { LOCATION = P95; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[5] } { LOCATION = P97; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[6] } { LOCATION = P99; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+set_pin_assignment { led[7] } { LOCATION = P98; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; }
+
+set_pin_assignment { RTC_SCL } { LOCATION = P41; IOSTANDARD = LVCMOS25; }
+set_pin_assignment { RTC_SDA } { LOCATION = P42; IOSTANDARD = LVCMOS25; }
+set_pin_assignment { UART_RX } { LOCATION = P86; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { UART_TX } { LOCATION = P84; IOSTANDARD = LVCMOS33; }
+
