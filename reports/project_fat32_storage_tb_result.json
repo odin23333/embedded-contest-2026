@@ -1,0 +1,7 @@
+[
+  {
+    "test": "fat32_storage_tb",
+    "result": "PASS",
+    "scope": "real FAT/scaler/storage, SD transport and DDR completion modeled"
+  }
+]

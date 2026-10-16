@@ -15,3 +15,10 @@ for name,files in suites.items():
     results.append({'test':name,'result':'PASS','scope':'fresh independent package source'})
     print(p.stdout.strip(),flush=True)
 (report/'standalone_tests.json').write_text(json.dumps(results,indent=2))
+
+# FAT32 fixtures are generated locally; no real TF card or raw disk is accessed.
+import sys
+args=[sys.executable,str(root/'scripts/fat32_tests.py')]
+if '--storage-only' in sys.argv:args+=['--storage-only']
+p=subprocess.run(args,cwd=root,creationflags=0x08000000)
+if p.returncode:raise SystemExit(p.returncode)

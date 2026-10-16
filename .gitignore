@@ -28,3 +28,12 @@ uisrc/01_rtl/python/song_48k.mif.dath
 .idea/
 Thumbs.db
 Desktop.ini
+
+# Generated FAT filesystem fixtures and waveform captures
+reports/fat32_*/
+reports/*.vcd
+reports/*.ppm
+
+# TD root session logs
+/td_*.log
+/td_*.logw

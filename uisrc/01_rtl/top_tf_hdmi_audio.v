@@ -1,5 +1,5 @@
 
-module top #(parameter ENABLE_BRIGHTNESS=0, parameter ENABLE_TRANSITION=1, parameter ENABLE_PREFETCH=1, parameter ENABLE_IMAGE_SCALING=1)(input clk,input [3:0] key_col,output [3:0] key_row,output [7:0] led,
+module top #(parameter ENABLE_BRIGHTNESS=0, parameter ENABLE_TRANSITION=1, parameter ENABLE_PREFETCH=1, parameter ENABLE_IMAGE_SCALING=1, parameter ENABLE_FAT32=1)(input clk,input [3:0] key_col,output [3:0] key_row,output [7:0] led,
     // HDMI TMDS
     output                      HDMI_CLK_P,
     output                      HDMI_D2_P,
@@ -217,7 +217,7 @@ end
 
 // ===================== TF 多图扫描与缓存（双缓冲） =====================
 sd_card_bmp #(
-    .EXTERNAL_CONTROL(1),.PREFETCH_ENABLED(ENABLE_PREFETCH),.IMAGE_SCALING_ENABLED(ENABLE_IMAGE_SCALING),
+    .EXTERNAL_CONTROL(1),.PREFETCH_ENABLED(ENABLE_PREFETCH),.IMAGE_SCALING_ENABLED(ENABLE_IMAGE_SCALING),.FAT32_ENABLED(ENABLE_FAT32),
     .CLK_FREQ_HZ       (25_000_000),
     .SCAN_START_SECTOR (32'd0),
     .SCAN_MAX_SECTOR   (32'd131071),

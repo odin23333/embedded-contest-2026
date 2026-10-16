@@ -2,199 +2,210 @@
   {
     "test": "video_axis_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "audio_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "bmp_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "frame_write_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "audio_modes_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_ALARM_SYNC/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "ddr_adapter_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "migration_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "playback_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "axis_buffer_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "compositor_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_ALARM_SYNC/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "system_response_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "system_fault_response_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "storage_watchdog_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "stability_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "bmp_pixel_bounds_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "card_state_loss_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "source_handshake_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "bmp_fault_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "brightness_top_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "brightness_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "brightness_compositor_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "fade_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_TIME2/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "fade_storage_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_PREFETCH/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "timestamp_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "time_uart_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "rtc_time_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "i2c_enable_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "historical retained, not rerun for scaling revision"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "alarm_sync_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "prefetch_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "buffer_retirement_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_SCALE/player",
-    "scope": "fresh scaling candidate test, relevant source promoted"
-  },
-  {
-    "test": "scaled_bmp_tb",
-    "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "fresh canonical scaling regression"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "scaled_fault_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "fresh canonical scaling regression"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+  },
+  {
+    "test": "scaled_bmp_tb",
+    "result": "PASS",
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
   },
   {
     "test": "write_start_tb",
     "result": "PASS",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_S200/player",
-    "scope": "fresh canonical scaling regression"
+    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
+    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+  },
+  {
+    "test": "fat32_tb",
+    "result": "PASS",
+    "cases": 34,
+    "scope": "real FAT/scaler, 34 sparse filesystem cases"
+  },
+  {
+    "test": "fat32_storage_tb",
+    "result": "PASS",
+    "scope": "real FAT/scaler/storage, SD/DDR peripherals modeled"
   }
 ]

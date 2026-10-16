@@ -3,6 +3,7 @@ module sd_card_bmp #(
     parameter integer EXTERNAL_CONTROL = 0,
     parameter integer PREFETCH_ENABLED = 0,
     parameter integer IMAGE_SCALING_ENABLED = 0,
+    parameter integer FAT32_ENABLED = 0,
     parameter integer CLK_FREQ_HZ       = 100_000_000,
     parameter [31:0]  SCAN_START_SECTOR = 32'd0,
     parameter [31:0]  SCAN_MAX_SECTOR   = 32'd131071,
@@ -353,7 +354,40 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
-generate if(IMAGE_SCALING_ENABLED)begin:scaled_bmp
+generate if(FAT32_ENABLED)begin:fat32_files
+fat32_bmp_read #(.CLK_FREQ_HZ(CLK_FREQ_HZ)) bmp_read_m0(
+    .pixel_write_ready(pixel_write_ready),
+    .clk                    (clk),
+    .rst                    (rst|storage_halt),
+    .ready                  (bmp_ready),.read_error(parse_error),
+
+    .scan_start             (scan_start_pulse),
+    .scan_start_sector      (SCAN_START_SECTOR),
+    .scan_max_sector        (SCAN_MAX_SECTOR),
+    .scan_target_count      (SCAN_TARGET_COUNT),
+    .scan_done              (scan_done),
+    .scan_found_valid       (scan_found_valid),
+    .scan_found_sector      (scan_found_sector),
+    .scan_found_total       (scan_found_total),
+
+    .load_start             (load_start_pulse),
+    .load_sector            (load_sector),
+
+    .sd_init_done           (sd_init_done),
+    .state_code             (state_code),
+    .bmp_width              (bmp_width),
+    .bmp_height             (bmp_height),
+    .write_req              (write_req),
+    .write_req_ack          (write_req_ack),
+    .sd_sec_read            (sd_sec_read),
+    .sd_sec_read_addr       (sd_sec_read_addr),
+    .sd_sec_read_data       (sd_sec_read_data),
+    .sd_sec_read_data_valid (sd_sec_read_data_valid),
+    .sd_sec_read_end        (sd_sec_read_end),
+    .bmp_data_wr_en         (bmp_data_wr_en),
+    .bmp_data               (bmp_data)
+);
+end else if(IMAGE_SCALING_ENABLED)begin:scaled_bmp
 bmp_scaled_read bmp_read_m0(
     .pixel_write_ready(pixel_write_ready),
     .clk                    (clk),

@@ -1,0 +1,8 @@
+[
+  {
+    "test": "fat32_tb",
+    "result": "PASS",
+    "cases": 34,
+    "scope": "real FAT/scaler, 34 sparse filesystem cases"
+  }
+]

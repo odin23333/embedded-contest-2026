@@ -54,7 +54,7 @@ module PLL_HDMI_AUDIO(input refclk,reset,output clk0_out,clk1_out,clk2_out,extlo
 endmodule
 
 module sd_card_bmp #(
-    parameter integer EXTERNAL_CONTROL = 0,parameter integer PREFETCH_ENABLED=0,parameter integer IMAGE_SCALING_ENABLED=0,
+    parameter integer EXTERNAL_CONTROL = 0,parameter integer PREFETCH_ENABLED=0,parameter integer FAT32_ENABLED=0,parameter integer IMAGE_SCALING_ENABLED=0,
     parameter integer CLK_FREQ_HZ       = 100_000_000,
     parameter [31:0]  SCAN_START_SECTOR = 32'd0,
     parameter [31:0]  SCAN_MAX_SECTOR   = 32'd131071,
