@@ -30,3 +30,6 @@ set_false_path -to [get_regs {pixel_time* pixel_time_valid}]
 set_false_path -to [get_regs {alarm_flash_sync/meta*}]
 
 set_false_path -to [get_regs {reader_retirement/sync/meta*}]
+
+# Error banner CDC: constrain the stable second stage, exempt only first capture.
+set_false_path -to [get_regs {diagnostic_sync/meta*}]

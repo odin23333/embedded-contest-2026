@@ -1,0 +1,7 @@
+[
+  {
+    "test": "fat32_recovery_tb",
+    "result": "PASS",
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled"
+  }
+]

@@ -2,6 +2,6 @@
   {
     "test": "fat32_storage_tb",
     "result": "PASS",
-    "scope": "real FAT/scaler/storage, SD transport and DDR completion modeled"
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled"
   }
 ]

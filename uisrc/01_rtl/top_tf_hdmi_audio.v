@@ -32,6 +32,7 @@ wire Sdr_busy;
 wire sd_card_clk=clk;
 wire sys_clk100_unused;
 wire rst_n,video_rst_n,mem_rst_n,audio_rst_n,serial_rst_n;
+wire image_rst_n,image_mem_rst_n,image_pixel_rst_n;
 wire ext_mem_clk;
 wire ext_mem_clk_sft;
 wire ext_mem_clk90,sys_lock,video_lock;
@@ -61,7 +62,7 @@ wire        sd_card_write_req;
 wire        sd_card_write_req_ack;
 wire        frame_write_finish;
 wire sd_write_ack,video_read_ack;
-level_sync #(.WIDTH(1)) sync_write_ack(sd_card_clk,rst_n,sd_card_write_req_ack,sd_write_ack);
+level_sync #(.WIDTH(1)) sync_write_ack(sd_card_clk,image_rst_n,sd_card_write_req_ack,sd_write_ack);
 level_sync #(.WIDTH(1)) sync_read_ack(video_clk,video_rst_n,video_read_req_ack,video_read_ack);
 reg         frame_write_toggle_mem;
 
@@ -102,7 +103,7 @@ wire        axis_s_ready;
 wire hdmi_axis_user,hdmi_axis_valid,hdmi_axis_last;wire [23:0] hdmi_axis_data;
 wire stream_overflow;wire [5:0] stream_count;wire stream_fault_ctrl;
 level_sync #(.WIDTH(1)) stream_fault_sync(clk,rst_n,stream_overflow,stream_fault_ctrl);
-axis_stream_buffer #(.DEPTH(32)) stream_queue(video_clk,video_rst_n,
+axis_stream_buffer #(.DEPTH(32)) stream_queue(video_clk,image_pixel_rst_n,
  axis_s_valid,axis_s_user,axis_s_last,axis_s_data,axis_s_ready,
  hdmi_axis_valid,hdmi_axis_user,hdmi_axis_last,hdmi_axis_data,stream_overflow,stream_count);
 
@@ -130,20 +131,28 @@ reset_sync reset_video(video_clk,raw_rst_n,video_rst_n);
 reset_sync reset_memory(ext_mem_clk,raw_rst_n,mem_rst_n);
 reset_sync reset_audio(audio_mclk,raw_rst_n,audio_rst_n);
 reset_sync reset_serial(hdmi_5x_clk,raw_rst_n,serial_rst_n);
-wire video_rst=~video_rst_n,mem_rst=~mem_rst_n,audio_rst=~audio_rst_n;
+reset_sync image_memory_reset(ext_mem_clk,image_rst_n,image_mem_rst_n);
+reset_sync image_pixel_reset(video_clk,image_rst_n,image_pixel_rst_n);
+wire video_rst=~video_rst_n,mem_rst=~image_mem_rst_n,audio_rst=~audio_rst_n;
 assign rst_all=~rst_n;
 wire emergency,muted,auto_enabled,next_event,next_valid,pending_request;
 wire backend_busy,backend_ready,has_multiple;
 wire buffer_retired,pixel_write_ready;
 buffer_retirement #(.ADDR_BITS(ADDR_BITS),.PAGE1_BASE(BUF1_ADDR)) reader_retirement(
  .mem_clk(ext_mem_clk),.mem_rst(mem_rst),.read_ack(video_read_req_ack),.read_addr(App_rd_addr),
- .ctrl_clk(sd_card_clk),.ctrl_rst_n(rst_n),.displayed_page(disp_buf_idx),.retired(buffer_retired));
+ .ctrl_clk(sd_card_clk),.ctrl_rst_n(image_rst_n),.displayed_page(disp_buf_idx),.retired(buffer_retired));
 wire storage_active,storage_progress,storage_error,storage_fault,ddr_ready_ctrl,memory_trusted,memory_lost;
-level_sync #(.WIDTH(1)) memory_ready_sync(clk,rst_n,Sdr_init_done,ddr_ready_ctrl);
-memory_health memory_health_check(clk,rst_n,ddr_ready_ctrl,memory_trusted,memory_lost);
-storage_watchdog #(.TIMEOUT_CYCLES(125000000)) storage_guard(clk,rst_n,storage_active,storage_progress,ddr_ready_ctrl,storage_error|memory_lost,storage_fault);
+level_sync #(.WIDTH(1)) memory_ready_sync(clk,image_rst_n,Sdr_init_done,ddr_ready_ctrl);
+memory_health memory_health_check(clk,image_rst_n,ddr_ready_ctrl,memory_trusted,memory_lost);
+storage_watchdog #(.TIMEOUT_CYCLES(125000000)) storage_guard(clk,image_rst_n,storage_active,storage_progress,ddr_ready_ctrl,storage_error|memory_lost,storage_fault);
+wire card_initialized,retrying;wire [7:0] storage_error_code,error_code;
+wire [7:0] fault_cause=memory_lost?8'h43:(!ddr_ready_ctrl?8'h44:
+ (storage_error_code!=0?storage_error_code:(!card_initialized?8'h41:(stream_fault_ctrl?8'h46:8'h45))));
+// Capture parser cause before the sticky watchdog halts/resets the parser.
+error_recovery recovery(clk,rst_n,keys_pressed[5],storage_fault|storage_error|memory_lost|stream_fault_ctrl,fault_cause,
+ display_valid && memory_trusted,image_rst_n,retrying,error_code);
 mode_control modes(sd_card_clk,rst_n,keys_pressed[0],keys_pressed[1],keys_pressed[2],keys_pressed[3],emergency,muted,auto_enabled,next_event);
-playback_scheduler #(.AUTO_CYCLES(125000000)) scheduler(sd_card_clk,rst_n,emergency|keys_pressed[2]|storage_fault,auto_enabled,next_event,
+playback_scheduler #(.AUTO_CYCLES(125000000)) scheduler(sd_card_clk,image_rst_n,emergency|keys_pressed[2]|storage_fault,auto_enabled,next_event,
  display_valid,has_multiple,backend_busy,backend_ready,next_valid,pending_request);
 wire [1:0] brightness_level,brightness_pixel;
 generate if(ENABLE_BRIGHTNESS)begin:brightness_feature
@@ -154,7 +163,7 @@ end endgenerate
 level_sync #(.WIDTH(2)) brightness_sync(video_clk,video_rst_n,brightness_level,brightness_pixel);
 reg [24:0] heartbeat;
 always @(posedge clk)if(base_reset)heartbeat<=0;else if(heartbeat==24999999)heartbeat<=0;else heartbeat<=heartbeat+1'b1;
-assign led=~{(pending_request|stream_fault_ctrl|storage_fault),base_reset,Sdr_init_done,display_valid,muted,emergency,auto_enabled,(heartbeat<12500000)};
+assign led=~{(pending_request|stream_fault_ctrl|storage_fault|retrying),base_reset,Sdr_init_done,display_valid,muted,emergency,auto_enabled,(heartbeat<12500000)};
 wire alarm_flash_audio,alarm_flash_pixel;
 level_sync #(.WIDTH(1)) alarm_flash_sync(video_clk,video_rst_n,alarm_flash_audio,alarm_flash_pixel);
 wire [5:0] vid_status;
@@ -172,7 +181,10 @@ always @(posedge video_clk or negedge video_rst_n)begin
   if(clock_sync[2]!=clock_sync[1])begin pixel_time<=rtc_bcd;pixel_time_valid<=rtc_valid;end
  end
 end
-wire osd_hs,osd_vs,osd_de;wire [23:0] osd_rgb;
+wire osd_hs,osd_vs,osd_de;wire [23:0] osd_rgb,diagnostic_rgb;
+wire [8:0] diagnostic_pixel;
+level_sync #(.WIDTH(9)) diagnostic_sync(video_clk,video_rst_n,{retrying,error_code},diagnostic_pixel);
+error_osd diagnostic(video_clk,video_rst_n,diagnostic_pixel[7:0],diagnostic_pixel[8],vid_status[0],osd_vs,osd_de,osd_rgb,diagnostic_rgb);
 video_compositor #(.BRIGHTNESS_ENABLED(ENABLE_BRIGHTNESS),.TIMESTAMP_ENABLED(1),.ALARM_FLASH_ENABLED(1)) screen(video_clk,video_rst_n,vid_status,brightness_pixel,hs,vs,de,vout_data,
  frame_start,osd_hs,osd_vs,osd_de,osd_rgb,pixel_time,pixel_time_valid,alarm_flash_pixel);
 reg frame_toggle;
@@ -224,7 +236,8 @@ sd_card_bmp #(
     .SCAN_TARGET_COUNT (3'd4)
 ) sd_card_bmp_m0(
     .clk               (sd_card_clk),
-    .rst               (rst_all),
+    .rst               (~image_rst_n),
+    .card_initialized(card_initialized),.storage_error_code(storage_error_code),
     .storage_halt(storage_fault),.storage_active(storage_active),.storage_progress(storage_progress),.storage_error(storage_error),
     .key_next(1'b1),.next_cmd(next_valid && backend_ready),.block_cmd(emergency|keys_pressed[2]),.frame_tick(frame_tick && (!ENABLE_TRANSITION || !display_valid || emergency || storage_fault || fade_permit_ctrl)),
     .buffer_retired(buffer_retired),.pixel_write_ready(pixel_write_ready),.pending_ready(image_pending_ready),.backend_busy(backend_busy),.backend_ready(backend_ready),.multiple(has_multiple),
@@ -397,7 +410,7 @@ video_rgb_to_axis_640x480 u_video_rgb_to_axis_640x480(
     .I_rst         (video_rst),
     .I_vs          (osd_vs),
     .I_de          (osd_de),
-    .I_rgb         (osd_rgb),
+    .I_rgb         (diagnostic_rgb),
     .O_video_user  (axis_s_user),
     .O_video_valid (axis_s_valid),
     .O_video_last  (axis_s_last),

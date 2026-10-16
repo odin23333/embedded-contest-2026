@@ -2,210 +2,230 @@
   {
     "test": "video_axis_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "audio_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "bmp_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "frame_write_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "audio_modes_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "ddr_adapter_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "migration_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "playback_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "axis_buffer_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "compositor_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "system_response_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "fresh earlier recovery-candidate top; final code/capture refinements covered by recovery_top_tb and final canonical system_fault_response_tb"
   },
   {
     "test": "system_fault_response_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_S200\\player",
+    "scope": "fresh final canonical source rerun after promotion"
   },
   {
     "test": "storage_watchdog_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "stability_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "bmp_pixel_bounds_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "card_state_loss_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "source_handshake_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "bmp_fault_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "brightness_top_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_S200\\player",
+    "scope": "fresh final canonical source rerun after promotion"
   },
   {
     "test": "brightness_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "brightness_compositor_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "fade_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "fade_storage_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "timestamp_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "time_uart_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "rtc_time_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "i2c_enable_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "alarm_sync_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "prefetch_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "buffer_retirement_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "scaled_fault_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "scaled_bmp_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "write_start_tb",
     "result": "PASS",
-    "scope": "fresh FAT32 candidate regression, exact relevant RTL promoted",
-    "execution_root": "C:/Users/MHR/Documents/Codex/MLK_FAT32/player"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
+  },
+  {
+    "test": "recovery_top_tb",
+    "result": "PASS",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
+  },
+  {
+    "test": "error_recovery_tb",
+    "result": "PASS",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
+    "scope": "; fresh recovery candidate, exact relevant source promoted"
   },
   {
     "test": "fat32_tb",
     "result": "PASS",
     "cases": 34,
-    "scope": "real FAT/scaler, 34 sparse filesystem cases"
+    "scope": "real filesystem/scaler, sparse fragmented card fixtures; fresh recovery candidate, exact relevant source promoted",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player"
   },
   {
     "test": "fat32_storage_tb",
     "result": "PASS",
-    "scope": "real FAT/scaler/storage, SD/DDR peripherals modeled"
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; fresh recovery candidate, exact relevant source promoted",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player"
+  },
+  {
+    "test": "fat32_recovery_tb",
+    "result": "PASS",
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; fresh recovery candidate, exact relevant source promoted",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player"
   }
 ]

@@ -13,5 +13,10 @@
     "test": "write_start_tb",
     "result": "PASS",
     "scope": "fresh independent package source"
+  },
+  {
+    "test": "error_recovery_tb",
+    "result": "PASS",
+    "scope": "fresh independent package source"
   }
 ]

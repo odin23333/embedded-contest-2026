@@ -516,6 +516,7 @@
 </FileInfo>
 </File>
 <File Path="uisrc/01_rtl/SD/fat32_bmp_read.v"><FileInfo><Attr Name="UsedInSyn" Val="true"/><Attr Name="UsedInP&R" Val="true"/><Attr Name="BelongTo" Val="design_1"/><Attr Name="CompileOrder" Val="117"/></FileInfo></File>
+<File Path="uisrc/01_rtl/control/error_recovery.v"><FileInfo><Attr Name="UsedInSyn" Val="true"/><Attr Name="UsedInP&R" Val="true"/><Attr Name="BelongTo" Val="design_1"/><Attr Name="CompileOrder" Val="118"/></FileInfo></File>
 </Verilog>
         <ADC_FILE>
             <File Path="uisrc/04_pin/pin.adc">

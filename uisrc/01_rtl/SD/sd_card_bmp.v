@@ -34,7 +34,8 @@ module sd_card_bmp #(
     output                      SD_DCLK,
     output                      SD_MOSI,
     input                       SD_MISO,
-    input buffer_retired,input pixel_write_ready
+    input buffer_retired,input pixel_write_ready,
+    output card_initialized,output [7:0] storage_error_code
 );
 
 localparam PREFETCH = PREFETCH_ENABLED && EXTERNAL_CONTROL;
@@ -71,6 +72,9 @@ reg [31:0]       load_sector;
 reg              scan_kicked;
 reg              first_image_committed;
 wire parse_error;
+wire [7:0] fs_error_code;
+assign card_initialized=sd_init_done;
+assign storage_error_code=(first_image_committed && !sd_init_done)?8'h81:(parse_error?(FAT32_ENABLED?fs_error_code:8'h30):8'd0);
 assign storage_error=parse_error | (first_image_committed && !sd_init_done);
 reg              auto_play_en;
 reg [31:0]       auto_cnt;
@@ -356,6 +360,7 @@ end
 
 generate if(FAT32_ENABLED)begin:fat32_files
 fat32_bmp_read #(.CLK_FREQ_HZ(CLK_FREQ_HZ)) bmp_read_m0(
+    .fs_error_code(fs_error_code),
     .pixel_write_ready(pixel_write_ready),
     .clk                    (clk),
     .rst                    (rst|storage_halt),
@@ -388,6 +393,7 @@ fat32_bmp_read #(.CLK_FREQ_HZ(CLK_FREQ_HZ)) bmp_read_m0(
     .bmp_data               (bmp_data)
 );
 end else if(IMAGE_SCALING_ENABLED)begin:scaled_bmp
+assign fs_error_code=8'h30;
 bmp_scaled_read bmp_read_m0(
     .pixel_write_ready(pixel_write_ready),
     .clk                    (clk),
@@ -421,6 +427,7 @@ bmp_scaled_read bmp_read_m0(
     .bmp_data               (bmp_data)
 );
 end else begin:fixed_bmp
+assign fs_error_code=8'h30;
 bmp_read bmp_read_m0(
     .clk                    (clk),
     .rst                    (rst|storage_halt),

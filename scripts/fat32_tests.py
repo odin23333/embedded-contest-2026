@@ -130,11 +130,13 @@ if '--storage-only' not in sys.argv:
  (report/'project_fat32_tb_result.json').write_text(json.dumps([{'test':'fat32_tb','result':'PASS','cases':len(results),'scope':'real filesystem/scaler, sparse fragmented card fixtures'}],indent=2))
 if len(sys.argv)==1 or '--storage-only' in sys.argv:
  out,n,_,_,_=fixture('storage')
- outv=report/'fat32_storage_tb.vvp'
- p=subprocess.run([str(tools/'bin/iverilog.exe'),'-B',str(tools/'lib/ivl'),'-g2012','-Wall','-s','fat32_storage_tb','-o',str(outv),str(hdl/'sd_card_bmp.v'),str(hdl/'fat32_bmp_read.v'),str(hdl/'bmp_scaled_read.v'),str(tb/'fat32_storage_tb.v')],capture_output=True,text=True)
- (report/'fat32_storage_compile.log').write_text(p.stdout+p.stderr);assert p.returncode==0,p.stderr
- p=subprocess.run([str(tools/'bin/vvp.exe'),'-M','-',str(outv),'+DIR='+out.as_posix(),f'+COUNT={n}'],cwd=report,capture_output=True,text=True,timeout=180)
- (report/'fat32_storage.log').write_text(p.stdout+p.stderr)
- ok=p.returncode==0 and 'PASS FAT32_STORAGE' in p.stdout
- (report/'project_fat32_storage_tb_result.json').write_text(json.dumps([{'test':'fat32_storage_tb','result':'PASS' if ok else 'FAIL','scope':'real FAT/scaler/storage, SD transport and DDR completion modeled'}],indent=2))
- print(p.stdout.strip(),flush=True);assert ok,p.stderr
+ for suite in ['fat32_storage_tb','fat32_recovery_tb']:
+  outv=report/(suite+'.vvp')
+  sources=[hdl/'sd_card_bmp.v',hdl/'fat32_bmp_read.v',hdl/'bmp_scaled_read.v',hdl.parent/'control/error_recovery.v',hdl.parent/'control/storage_watchdog.v',tb/(suite+'.v')]
+  p=subprocess.run([str(tools/'bin/iverilog.exe'),'-B',str(tools/'lib/ivl'),'-g2012','-Wall','-s',suite,'-o',str(outv),*[str(x) for x in sources]],capture_output=True,text=True)
+  (report/(suite+'_compile.log')).write_text(p.stdout+p.stderr);assert p.returncode==0,p.stderr
+  p=subprocess.run([str(tools/'bin/vvp.exe'),'-M','-',str(outv),'+DIR='+out.as_posix(),f'+COUNT={n}'],cwd=report,capture_output=True,text=True,timeout=180)
+  (report/(suite+'.log')).write_text(p.stdout+p.stderr)
+  ok=p.returncode==0 and 'PASS FAT32' in p.stdout
+  (report/('project_'+suite+'_result.json')).write_text(json.dumps([{'test':suite,'result':'PASS' if ok else 'FAIL','scope':'actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled'}],indent=2))
+  print(p.stdout.strip(),flush=True);assert ok,p.stderr
