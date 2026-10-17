@@ -1,33 +1,37 @@
-# 最新：缩放画质优化已实板通过（2026-10-17）
+# MLK-S200 FPGA 图片播放器
 
-用户于2026-10-17对三组实板检查均回复“正常”：KEY1四图画质、宽/竖图黑边及原尺寸显示正常，静置检查无异常报告；至少三次轮播、缓存就绪、渐变、信息栏和时间戳正常，未报告等待明显变长；KEY3声画联动、KEY4静音恢复、退出应急及KEY6重试恢复首图正常。未进行客观画质评分或切图时间仪器测量。 默认双线性插值、等比例黑边和640×480输出；原尺寸像素保真。当前实测固件MLK_S200_TESTED.bit，播放信息栏版保留于MLK_S200_FEEDBACK_ROLLBACK.bit。43项播放器记录中20项本任务新跑，其余为历史记录；11组全尺寸像素及34个FAT用例详见uisrc/06_doc/quality_summary.json。独立工程可执行scripts/test.py --unit-only做7项加默认画质像素选测；scripts/quality_tests.py运行完整11尺寸，默认test.py另运行文件系统与恢复集成。可选亮度扩展与新画质组合仍有布线失败，未发布可用的新亮度固件；默认版本不受影响。以下为历史记录，重编译结果单独标识。
+米联客MLK-S200 / EG4D20EG176，板载25MHz输入，TD6.2.1。按米联客教程组织为独立工程，根目录 `fpga_prj.al` 使用相对路径；保持完整目录，可放在短英文路径重新打开编译。
 
-# 最新：播放界面反馈已实板通过（2026-10-17）
+## 当前功能
 
-用户于2026-10-17逐项确认：PIC/NEXT编号及四图循环、CACHE LOAD→READY、渐变与画面稳定均正常；AUTO 05S递减、自动切图、停止回MANUAL及时间戳无遮挡均正常；应急隐藏信息栏、声画联动、静音恢复、退出恢复信息栏，以及KEY6重试隐藏后恢复首图均正常。 当前实测固件MLK_S200_TESTED.bit；错误恢复版保留于MLK_S200_RECOVERY_ROLLBACK.bit。播放信息栏的PIC/NEXT/CACHE、轮播倒计时与等待/切换提示均来自实际状态。40项播放器套件记录和34个FAT32用例的验证范围详见uisrc/06_doc/feedback_summary.json；独立工程选测5项加存储恢复集成。GUI和命令行均采用high布局及时序优化。以下为历史记录，最新构建见reports/standalone_build.json。
+- FAT32目录与簇链读取：优先MLK_TEST文件夹，否则根目录，按目录顺序最多四张BMP。
+- 支持1–2048宽高、底向上24位无压缩BMP，双线性等比例缩放、居中黑边；HDMI固定640×480。640×480原尺寸像素保持一致。
+- 下一张预加载、渐暗渐亮、手动/自动轮播、图片编号/缓存反馈和真实HH:MM:SS。
+- 应急中文、警报声画同步闪烁、静音恢复、错误码及按键重试。
 
-# 最新：错误提示与恢复已实板通过（2026-10-16）
+KEY1下一张，KEY2轮播，KEY3应急，KEY4静音，KEY6重试，KEY16整机复位。将BMP普通复制到FAT32卡即可，换卡或改文件后按KEY6。首次或未缓存图片仍可能等待；不支持JPEG/PNG、压缩BMP或负高度BMP。
 
-用户实板确认：插卡KEY6重试后恢复首图，切图、渐变、轮播、时间戳正常；无卡KEY6显示E41，插回原卡再KEY6可恢复并清除错误；应急期间KEY6后中文、闪烁、警报、KEY4静音恢复、退出应急和图片/时间戳均正常。 KEY6仅重启读卡/图像/DDR链路，KEY16仍整机复位。实测固件MLK_S200_TESTED.bit，旧FAT32版保留于MLK_S200_FAT32_ROLLBACK.bit；重编译产物单独标识。38项播放器套件记录和34个FAT32用例通过，详见uisrc/06_doc/错误提示与恢复.md。以下条目为历史记录，最新构建见reports/standalone_build.json。
+## 固件与 Flash 状态
 
-# 最新：FAT32文件读取已实板通过（2026-10-16）
+`uisrc/05_boot/MLK_S200_TESTED.bit` 是用户实板通过且已Flash固化、自动回读校验通过的画质版，SHA256：`5605e066181803426239a70b37efe6d4e6a66fb787dba26c2708596709f3dda2`。
 
-读取/MLK_TEST或根目录BMP并沿簇链读取，保留640×480输出、缩放、预加载、渐变、时间戳和应急声画联动。当前卡全部功能实板正常；离线34个FAT32用例与播放器集成通过，原有33项套件本次也重新通过（执行根为MLK_FAT32，相关源码原样同步）。真实碎片卡尚未单独上板验证，Flash和长期运行仍待验收。
+BitWriter设置：EG4D20EG176、PROGRAM_FLASH、5MHz、16Mbits。固化步骤、日志和RTC情况见 [Flash固化与时钟说明](uisrc/06_doc/Flash固化与时钟说明.md)。PROGRAM_SRAM仍可用于临时验证。
 
-# MLK-S200 独立播放器工程
+断电后RTC曾显示--:--:--，校时后显示正确、秒数递增。CR1220电池未安装或不确定，断电保时尚未验证；没有有效后备电池时，完全掉电后可能需重新校时。其余冷启动功能、10次重启及长期运行尚未完整验收。
 
-在TD 6.2.1中通过File → Open Project打开根目录fpga_prj.al，确认器件EG4D20EG176、顶层top，执行Run All。源码、IP和ADC/SDC已全部添加，采用相对路径；解压后保留完整目录，可放到短英文路径。
+`MLK_S200_REBUILT.bit` 是独立工程复编产物，未替代实测固件；`MLK_S200_FEEDBACK_ROLLBACK.bit` 是上一已实测版本。可选亮度扩展与新画质组合布线失败，未发布可用的新亮度固件；默认播放器未启用该扩展。
 
-包含TF图片按比例缩放（HDMI固定640×480）、下一张预加载、渐暗渐亮、真实HH:MM:SS、应急中文画面/声音同步闪烁和静音恢复。支持底向上、无压缩24位BMP，宽高1–2048，最多四张FAT32目录BMP图片（支持碎片簇链）；采用最近邻缩放。
+## 打开与复现
 
-KEY1下一张，KEY2自动轮播，KEY3应急切换，KEY4静音，KEY6读卡/图像重试，KEY16整机复位。首次读卡和未缓存图片仍需加载；换卡后按KEY6重新读取。将BMP普通复制到FAT32卡的MLK_TEST文件夹；文件夹不存在时读取根目录。支持碎片文件和目录，最多读取目录顺序前四张图。修改卡内容后重新插卡并KEY6重试，详细范围见uisrc/06_doc/FAT32读取说明.md。原始及混合尺寸素材分别在uisrc/02_sim/media和mixed_resolution。
+在TD6.2.1选择File → Open Project打开 `fpga_prj.al`，确认器件EG4D20EG176及顶层top，执行Run All。直接GUI编译不依赖Python；自动化工具路径由 `scripts/tool_paths.json` 配置。
 
-uisrc/05_boot/MLK_S200_TESTED.bit为用户实际验证通过的FAT32实测版（610de0e1…），原缩放版保留为MLK_S200_SCALING_ROLLBACK.bit。编译生成的fpga_prj_Runs/phy_1/fpga_prj.bit是新构建，仅经离线验证，不可称已通过实板验证。BitWriter选择EG4D20EG176、PROGRAM_SRAM，实测固件下载，OneCable使用接口A WinUSB和AL-LINK-FT(Local Host)。不自动写Flash。
+```text
+python scripts/build.py
+python scripts/test.py --unit-only
+python scripts/quality_tests.py
+python scripts/fat32_tests.py
+```
 
-scripts/tool_paths.json仅配置自动化依赖路径，更换电脑时修改tool_root/python；直接在TD打开.al无需修改该JSON。scripts/sync_clock.ps1可配合串口校时。长期运行、Flash固化、断电启动和RTC电池保持仍待实测。历史33播放器套件记录包含未在此版本全量重跑的结果，具体范围见06_doc；独立打包后编译和精选测试另存reports。
+独立工程默认复编与时序通过：SWNS0.209ns/HWNS0.003ns；存在继承的DDR PHY-7002位置提示，详见reports/standalone_build.json。最近补跑7项选测及默认双线性7×5整帧核对通过。画质任务共有20项新跑播放器套件、23项历史记录，共43项；11尺寸完整像素对照及34个FAT用例另有明细，不能称全部记录都是本次重新执行。此次Flash记录整合未修改RTL、引脚、时序约束或固件，没有重新编译。
 
-
-2026-10-14 独立目录从零构建通过：SWNS 0.549 ns，HWNS 0.003 ns；仅有两条继承的DDR PHY-7002位置提示。源码输入哈希保持不变。独立包新增缩放逐像素、异常BMP、真实FIFO启动三项测试全部通过；历史全量结果未重跑。自动化：python scripts/build.py；python scripts/test.py。
-
-
-FAT32复现：python scripts/fat32_tests.py；包含34个文件系统用例和实际存储控制集成。python scripts/test.py运行精选四项（含错误恢复）加完整FAT32测试；加--storage-only则精选四项加FAT32存储和损坏启动扇区恢复集成。只生成reports下虚拟扇区文件，不操作真实磁盘。后文2026-10-14编译证据为历史；最新构建见reports/standalone_build.json。
+串口校时使用 `scripts/sync_clock.ps1`，本机接口B为COM4。源码/IP/仿真/约束/固件/文档分别在uisrc的01_rtl至06_doc。完整开发历史见 [当前开发进度](uisrc/06_doc/当前开发进度.md)，画质范围见 [缩放画质优化](uisrc/06_doc/缩放画质优化.md)。冻结W7_RC2及week8归档保持不变。
