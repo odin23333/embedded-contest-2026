@@ -23,5 +23,15 @@
     "test": "playback_feedback_tb",
     "result": "PASS",
     "scope": "fresh independent package source"
+  },
+  {
+    "test": "quality_fifo_tb",
+    "result": "PASS",
+    "scope": "fresh independent package source"
+  },
+  {
+    "test": "quality_osd_tb",
+    "result": "PASS",
+    "scope": "fresh independent package source"
   }
 ]

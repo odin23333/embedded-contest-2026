@@ -1,0 +1,273 @@
+[
+  {
+    "case": "fragmented_mbr",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {}
+  },
+  {
+    "case": "superfloppy_root",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "mbr": false,
+      "folder": false
+    }
+  },
+  {
+    "case": "two_sector_cluster",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "spc": 2
+    }
+  },
+  {
+    "case": "active_fat1",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "active": 1
+    }
+  },
+  {
+    "case": "large_cluster",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "spc": 128
+    }
+  },
+  {
+    "case": "four_of_five",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "extra_files": 3
+    }
+  },
+  {
+    "case": "single_fat",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "nfats": 1
+    }
+  },
+  {
+    "case": "mirrored_low_bits",
+    "result": "PASS",
+    "expected_error": 0,
+    "options": {
+      "fault": "mirror_low_bits"
+    }
+  },
+  {
+    "case": "two_node_cycle",
+    "result": "PASS",
+    "expected_error": 35,
+    "options": {
+      "fault": "two_node_cycle"
+    }
+  },
+  {
+    "case": "signature",
+    "result": "PASS",
+    "expected_error": 16,
+    "options": {
+      "fault": "signature"
+    }
+  },
+  {
+    "case": "bps",
+    "result": "PASS",
+    "expected_error": 18,
+    "options": {
+      "fault": "bps"
+    }
+  },
+  {
+    "case": "spc",
+    "result": "PASS",
+    "expected_error": 18,
+    "options": {
+      "fault": "spc"
+    }
+  },
+  {
+    "case": "fat16",
+    "result": "PASS",
+    "expected_error": 18,
+    "options": {
+      "fault": "fat16"
+    }
+  },
+  {
+    "case": "version",
+    "result": "PASS",
+    "expected_error": 18,
+    "options": {
+      "fault": "version"
+    }
+  },
+  {
+    "case": "fat_short",
+    "result": "PASS",
+    "expected_error": 19,
+    "options": {
+      "fault": "fat_short"
+    }
+  },
+  {
+    "case": "root_range",
+    "result": "PASS",
+    "expected_error": 19,
+    "options": {
+      "fault": "root_range"
+    }
+  },
+  {
+    "case": "active_range",
+    "result": "PASS",
+    "expected_error": 18,
+    "options": {
+      "fault": "active_range"
+    }
+  },
+  {
+    "case": "partition_size",
+    "result": "PASS",
+    "expected_error": 19,
+    "options": {
+      "fault": "partition_size"
+    }
+  },
+  {
+    "case": "no_partition",
+    "result": "PASS",
+    "expected_error": 17,
+    "options": {
+      "fault": "no_partition"
+    }
+  },
+  {
+    "case": "empty",
+    "result": "PASS",
+    "expected_error": 23,
+    "options": {
+      "fault": "empty"
+    }
+  },
+  {
+    "case": "free",
+    "result": "PASS",
+    "expected_error": 35,
+    "options": {
+      "fault": "free"
+    }
+  },
+  {
+    "case": "bad",
+    "result": "PASS",
+    "expected_error": 35,
+    "options": {
+      "fault": "bad"
+    }
+  },
+  {
+    "case": "reserved",
+    "result": "PASS",
+    "expected_error": 35,
+    "options": {
+      "fault": "reserved"
+    }
+  },
+  {
+    "case": "out_of_range",
+    "result": "PASS",
+    "expected_error": 35,
+    "options": {
+      "fault": "out_of_range"
+    }
+  },
+  {
+    "case": "early_eoc",
+    "result": "PASS",
+    "expected_error": 34,
+    "options": {
+      "fault": "early_eoc"
+    }
+  },
+  {
+    "case": "cycle",
+    "result": "PASS",
+    "expected_error": 35,
+    "options": {
+      "fault": "cycle"
+    }
+  },
+  {
+    "case": "directory_cycle",
+    "result": "PASS",
+    "expected_error": 22,
+    "options": {
+      "fault": "directory_cycle"
+    }
+  },
+  {
+    "case": "directory_bound",
+    "result": "PASS",
+    "expected_error": 20,
+    "options": {
+      "fault": "directory_bound"
+    }
+  },
+  {
+    "case": "directory_short_file",
+    "result": "PASS",
+    "expected_error": 33,
+    "options": {
+      "fault": "directory_short_file"
+    }
+  },
+  {
+    "case": "header_file_size",
+    "result": "PASS",
+    "expected_error": 38,
+    "options": {
+      "fault": "header_file_size"
+    }
+  },
+  {
+    "case": "bmp_signature",
+    "result": "PASS",
+    "expected_error": 48,
+    "options": {
+      "fault": "bmp_signature"
+    }
+  },
+  {
+    "case": "short_sector",
+    "result": "PASS",
+    "expected_error": 2,
+    "options": {
+      "fault": "short_sector"
+    }
+  },
+  {
+    "case": "long_sector",
+    "result": "PASS",
+    "expected_error": 2,
+    "options": {
+      "fault": "long_sector"
+    }
+  },
+  {
+    "case": "read_timeout",
+    "result": "PASS",
+    "expected_error": 3,
+    "options": {
+      "fault": "read_timeout"
+    }
+  }
+]

@@ -6,7 +6,7 @@ reg[7:0] card[0:7000000];reg[23:0] expected[0:307199];
 reg[1023:0] filename,expname;integer size,i,j,base,pixels=0,cycles=0,reads=0;
 always #5 clk=~clk;
 always @(negedge clk)begin cycles=cycles+1;space=(cycles%11!=0 && cycles%11!=1);end
-bmp_scaled_read dut(clk,rst,ready,error,scan,32'd0,32'd0,3'd1,done,found,sector,total,load,32'd0,!rst,code,16'd640,16'd480,req,ack,rd,addr,din,dv,ending,wen,pixel,space);
+bmp_scaled_read #(.QUALITY(0)) dut(clk,rst,ready,error,scan,32'd0,32'd0,3'd1,done,found,sector,total,load,32'd0,!rst,code,16'd640,16'd480,req,ack,rd,addr,din,dv,ending,wen,pixel,space);
 initial begin
  filename="scaled_fixture_bytes.hex";expname="scaled_fixture_expected.hex";size=512;
  i=$value$plusargs("CARD=%s",filename);i=$value$plusargs("EXPECT=%s",expname);i=$value$plusargs("SIZE=%d",size);

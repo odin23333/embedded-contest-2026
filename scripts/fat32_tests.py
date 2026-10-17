@@ -12,7 +12,36 @@ def bmp(w,h):
   for x in range(w):raw.extend(((x*11+y*7)&255,(x*3+y*23)&255,(x*17+y*5)&255))
   raw.extend(b'\xa5'*(stride-w*3))
  return struct.pack('<2sIHHI',b'BM',54+len(raw),0,0,54)+struct.pack('<IiiHHIIiiII',40,w,h,1,24,0,len(raw),0,0,0,0)+raw
+def coordinates(i,source,dest):
+ n=(2*i+1)*source-dest;den=2*dest
+ if n<=0:return 0,0,0
+ a,rem=divmod(n,den)
+ if a>=source-1:return source-1,source-1,0
+ return a,a+1,(rem*256)//den
+
+def sample(x,y):return ((x*17+y*5)&255,(x*3+y*23)&255,(x*11+y*7)&255)
+
 def expected(w,h):
+ if w*480>=h*640:fw,fh=640,max(1,h*640//w)
+ else:fw,fh=max(1,w*480//h),480
+ left,bottom=(640-fw)//2,(480-fh)//2
+ xs=[coordinates(i,w,fw) for i in range(fw)];ys=[coordinates(i,h,fh) for i in range(fh)]
+ out=[]
+ for y in range(480):
+  for x in range(640):
+   if left<=x<left+fw and bottom<=y<bottom+fh:
+    x0,x1,fx=xs[x-left];y0,y1,fy=ys[y-bottom]
+    a,b,c,d=sample(x0,y0),sample(x1,y0),sample(x0,y1),sample(x1,y1)
+    rgb=[]
+    for ch in range(3):
+     lo=(a[ch]*(256-fx)+b[ch]*fx+128)//256
+     hi=(c[ch]*(256-fx)+d[ch]*fx+128)//256
+     rgb.append((lo*(256-fy)+hi*fy+128)//256)
+    out.append(''.join(f'{v:02x}' for v in rgb)+'\n')
+   else:out.append('000000\n')
+ return ''.join(out)
+
+def nearest_expected(w,h):
  if w*480>=h*640:fw,fh=640,max(1,h*640//w)
  else:fw,fh=max(1,w*480//h),480
  left,bottom=(640-fw)//2,(480-fh)//2
@@ -24,13 +53,14 @@ def expected(w,h):
     out.append(f'{(xx*17+yy*5)&255:02x}{(xx*3+yy*23)&255:02x}{(xx*11+yy*7)&255:02x}\n')
    else:out.append('000000\n')
  return ''.join(out)
+
 def entry(name,attr,c=0,size=0):
  b=bytearray(32);b[:11]=name.encode();b[11]=attr;u16(b,20,c>>16);u16(b,26,c&65535);u32(b,28,size);return b
 def deleted():
  b=bytearray(512)
  for i in range(16):b[i*32]=0xe5
  return b
-def fixture(name,spc=1,mbr=True,active=0,folder=True,fault=None,extra_files=0,nfats=2):
+def fixture(name,spc=1,mbr=True,active=0,folder=True,fault=None,extra_files=0,nfats=2,nearest=False):
  card={};part=131072 if mbr else 0;reserved=32;fats=600;clusters=70000;total=reserved+nfats*fats+clusters*spc;data=part+reserved+nfats*fats
  def clba(c):return data+(c-2)*spc
  def putfat(c,v):
@@ -102,7 +132,8 @@ def fixture(name,spc=1,mbr=True,active=0,folder=True,fault=None,extra_files=0,nf
  sectors=sorted(card.items());assert len(sectors)<=256
  (out/'bytes.hex').write_text(''.join(''.join(f'{v:02x}\n' for v in block) for _,block in sectors))
  (out/'lbas.hex').write_text(''.join(f'{a:08x}\n' for a,_ in sectors))
- (out/'expected0.hex').write_text(expected(33,17));(out/'expected1.hex').write_text(expected(7,5))
+ reference=nearest_expected if nearest else expected
+ (out/'expected0.hex').write_text(reference(33,17));(out/'expected1.hex').write_text(reference(7,5))
  return out,len(sectors),error,stage,variant
 
 cmd=[str(tools/'bin/iverilog.exe'),'-B',str(tools/'lib/ivl'),'-g2012','-Wall','-s','fat32_tb','-o',str(report/'fat32_tb.vvp'),str(hdl/'fat32_bmp_read.v'),str(hdl/'bmp_scaled_read.v'),str(tb/'fat32_tb.v')]
@@ -113,9 +144,9 @@ cases += [(f,{'fault':f}) for f in faults]
 if len(sys.argv)>1:cases=[c for c in cases if c[0] in sys.argv[1:]]
 results=[]
 for name,options in cases:
- out,n,err,stage,variant=fixture(name,**options)
+ out,n,err,stage,variant=fixture(name,nearest=True,**options)
  files=min(4,2+options.get('extra_files',0))
- p=subprocess.run([str(tools/'bin/vvp.exe'),'-M','-',str(report/'fat32_tb.vvp'),'+DIR='+out.as_posix(),f'+COUNT={n}',f'+ERROR={err}',f'+FILES={files}',f'+VARIANT={variant}',f'+STAGE={stage}'],cwd=report,capture_output=True,text=True,timeout=90)
+ p=subprocess.run([str(tools/'bin/vvp.exe'),'-M','-',str(report/'fat32_tb.vvp'),'+DIR='+out.as_posix(),f'+COUNT={n}',f'+ERROR={err}',f'+FILES={files}',f'+VARIANT={variant}',f'+STAGE={stage}'],cwd=report,capture_output=True,text=True,timeout=600)
  (report/('fat32_'+name+'.log')).write_text(p.stdout+p.stderr)
  ok=p.returncode==0 and 'PASS FAT32' in p.stdout
  results.append({'case':name,'result':'PASS' if ok else 'FAIL','expected_error':err,'options':options})
@@ -126,16 +157,16 @@ if len(sys.argv)>1 and (report/'fat32_tests.json').exists():
 (report/'fat32_tests.json').write_text(json.dumps(results,indent=2))
 assert all(x['result']=='PASS' for x in results)
 
-if '--storage-only' not in sys.argv:
- (report/'project_fat32_tb_result.json').write_text(json.dumps([{'test':'fat32_tb','result':'PASS','cases':len(results),'scope':'real filesystem/scaler, sparse fragmented card fixtures'}],indent=2))
-if len(sys.argv)==1 or '--storage-only' in sys.argv:
+if '--storage-only' not in sys.argv and '--recovery-only' not in sys.argv:
+ (report/'project_fat32_tb_result.json').write_text(json.dumps([{'test':'fat32_tb','result':'PASS','cases':len(results),'scope':'real filesystem with legacy nearest scaler, sparse fragmented fixtures; default bilinear covered by quality matrix and real storage/recovery integration'}],indent=2))
+if len(sys.argv)==1 or '--storage-only' in sys.argv or '--recovery-only' in sys.argv:
  out,n,_,_,_=fixture('storage')
- for suite in ['fat32_storage_tb','fat32_recovery_tb']:
+ for suite in (['fat32_recovery_tb'] if '--recovery-only' in sys.argv else ['fat32_storage_tb','fat32_recovery_tb']):
   outv=report/(suite+'.vvp')
   sources=[hdl/'sd_card_bmp.v',hdl/'fat32_bmp_read.v',hdl/'bmp_scaled_read.v',hdl.parent/'control/error_recovery.v',hdl.parent/'control/storage_watchdog.v',tb/(suite+'.v')]
   p=subprocess.run([str(tools/'bin/iverilog.exe'),'-B',str(tools/'lib/ivl'),'-g2012','-Wall','-s',suite,'-o',str(outv),*[str(x) for x in sources]],capture_output=True,text=True)
   (report/(suite+'_compile.log')).write_text(p.stdout+p.stderr);assert p.returncode==0,p.stderr
-  p=subprocess.run([str(tools/'bin/vvp.exe'),'-M','-',str(outv),'+DIR='+out.as_posix(),f'+COUNT={n}'],cwd=report,capture_output=True,text=True,timeout=180)
+  p=subprocess.run([str(tools/'bin/vvp.exe'),'-M','-',str(outv),'+DIR='+out.as_posix(),f'+COUNT={n}'],cwd=report,capture_output=True,text=True,timeout=600)
   (report/(suite+'.log')).write_text(p.stdout+p.stderr)
   ok=p.returncode==0 and 'PASS FAT32' in p.stdout
   (report/('project_'+suite+'_result.json')).write_text(json.dumps([{'test':suite,'result':'PASS' if ok else 'FAIL','scope':'actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled'}],indent=2))

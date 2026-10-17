@@ -35,3 +35,7 @@ set_false_path -to [get_regs {reader_retirement/sync/meta*}]
 set_false_path -to [get_regs {diagnostic_sync/meta*}]
 
 set_false_path -to [get_regs {feedback_sync/meta*}]
+
+# FIFO clear level is now explicitly synchronized to the producer clock.
+# Exempt only its new first capture; stable stage, barrier and FIFO data stay timed.
+set_false_path -to [get_regs {frame_read_write_m0/write_clear_meta}]

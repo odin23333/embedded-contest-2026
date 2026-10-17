@@ -84,13 +84,33 @@ wire                                 write_fifo_aclr;            // fifo Asynchr
 
 wire [8:0] write_used;
 reg [2:0] write_reset_hold;
-always @(posedge write_clk or posedge write_fifo_aclr)begin
- if(write_fifo_aclr)write_reset_hold<=3'b111;
+reg write_ready_r;
+reg write_clear_meta,write_clear_stable;
+// The source holds write_req until memory ACK, so the barrier is already high
+// before FIFO clear asserts. Transfer the clear/reset LEVEL through two local
+// flip-flops; only the first actual capture is asynchronous to the producer.
+always @(posedge write_clk)begin
+ if(write_req)begin write_clear_meta<=1'b1;write_clear_stable<=1'b1;end
+ else begin write_clear_meta<=rst|write_fifo_aclr;write_clear_stable<=write_clear_meta;end
+end
+always @(posedge write_clk)begin
+ if(write_req || write_clear_stable)write_reset_hold<=3'b111;
  else write_reset_hold<={write_reset_hold[1:0],1'b0};
 end
-// Vendor FIFO releases its write reset over two write-clock cycles.
-// Keep the registered producer gated until that release has completed.
-assign write_ready=(write_used<9'd384) && !write_fifo_aclr && !write_reset_hold[2];
+// The write-side request is local and held until the memory-side ACK. Restart
+// the barrier from that local request, rather than asynchronously releasing
+// three local registers from a memory-clock reset. After request deassertion,
+// three write clocks cover the ACK return and vendor FIFO's two-clock release.
+// Sample the FIFO clear locally, and register the ready result locally too.
+// This prevents a memory-clock clear from driving the scaler's pixel CE directly.
+// The 384/512 watermark reserves 128 words, far exceeding the one extra ready
+// cycle and registered-producer/FIFO acceptance pipeline. A local request blocks
+// ready immediately; FIFO clear plus the release barrier keep it blocked to ACK.
+always @(posedge write_clk)begin
+ if(write_req || write_clear_stable || write_reset_hold[2])write_ready_r<=1'b0;
+ else write_ready_r<=(write_used<9'd384);
+end
+assign write_ready=write_ready_r && !write_req;
 wire O_wr_busy;
 wire O_rd_busy;
 

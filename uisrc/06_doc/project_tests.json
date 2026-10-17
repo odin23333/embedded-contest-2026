@@ -3,241 +3,259 @@
     "test": "video_axis_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "audio_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "bmp_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "frame_write_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "audio_modes_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "ddr_adapter_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "migration_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "playback_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "axis_buffer_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "compositor_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "system_response_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "system_fault_response_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "storage_watchdog_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "stability_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "bmp_pixel_bounds_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "card_state_loss_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "source_handshake_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "bmp_fault_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "brightness_top_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "brightness_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "brightness_compositor_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "fade_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "fade_storage_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "timestamp_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "time_uart_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "rtc_time_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "i2c_enable_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "alarm_sync_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "prefetch_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
   },
   {
     "test": "buffer_retirement_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "scaled_fault_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
   },
   {
     "test": "scaled_bmp_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
   },
   {
     "test": "write_start_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
   },
   {
     "test": "recovery_top_tb",
     "result": "PASS",
     "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "scope": "historical accepted feedback baseline; not rerun in quality task"
   },
   {
     "test": "error_recovery_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
   },
   {
     "test": "playback_feedback_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
-    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
   },
   {
     "test": "fat32_tb",
     "result": "PASS",
     "cases": 34,
-    "scope": "real filesystem/scaler, sparse fragmented card fixtures; feedback task fresh records, final renderer/top rerun after optimization",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player"
+    "scope": "real filesystem with legacy nearest scaler, sparse fragmented fixtures; default bilinear covered by quality matrix and real storage/recovery integration; fresh quality task; top response models preceded equivalent error-OSD resource rewrite",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player"
   },
   {
     "test": "fat32_storage_tb",
     "result": "PASS",
-    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; feedback task fresh records, final renderer/top rerun after optimization",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player"
+    "scope": "fresh candidate pre-pixel-progress patch; pixel/cache/storage logic unchanged; final pixel-progress patch covered by fat32_recovery_tb",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player"
   },
   {
     "test": "fat32_recovery_tb",
     "result": "PASS",
-    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; feedback task fresh records, final renderer/top rerun after optimization",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player"
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; fresh quality task; top response models preceded equivalent error-OSD resource rewrite",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player"
   },
   {
     "test": "playback_feedback_top_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_S200\\player",
-    "scope": "fresh final canonical source after promotion"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player",
+    "scope": "; fresh quality task; top response models preceded equivalent error-OSD resource rewrite"
+  },
+  {
+    "test": "quality_fifo_tb",
+    "result": "PASS",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
+  },
+  {
+    "test": "quality_osd_tb",
+    "result": "PASS",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_Player_Standalone",
+    "scope": "fresh standalone selected suite, exact promoted RTL with portable package paths"
+  },
+  {
+    "test": "quality_scaled_tb",
+    "result": "PASS",
+    "scope": "11 complete default-quality dimensions at candidate root; fresh standalone 7x5 default-quality full-frame smoke with same exact scaler RTL",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_QUALITY\\player"
   }
 ]

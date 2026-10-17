@@ -1,5 +1,9 @@
 `timescale 1ns/1ps
 module fat32_tb;
+// Filesystem fault/partition/cluster matrix is independent of interpolation.
+// Keep its established nearest pixel oracle; storage/recovery tests below use
+// the production default bilinear path and the bilinear reference images.
+defparam dut.scaler.QUALITY=0;
 reg clk=0,rst=1,initialized=0,scan=0,load=0,ack=0,dv=0,ending=0,space=1;
 reg[31:0] chosen=0;reg[7:0] din=0;
 wire ready,error,done,found,req,rd,wen;wire[31:0] sector,addr;wire[2:0] total;wire[3:0] code;wire[7:0] fs_code;wire[23:0] pixel;

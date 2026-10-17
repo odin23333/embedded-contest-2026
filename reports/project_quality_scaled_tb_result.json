@@ -1,0 +1,7 @@
+[
+  {
+    "test": "quality_scaled_tb",
+    "result": "PASS",
+    "scope": "11 complete default-quality exact pixel cases, independent rational-coordinate oracle"
+  }
+]

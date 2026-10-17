@@ -1,0 +1,21 @@
+{
+  "before": {
+    "frames": 1,
+    "pixels": 77877,
+    "halt": 1,
+    "watchdog_count": 999999
+  },
+  "after": {
+    "frames": 1,
+    "pixels": 108760,
+    "halt": 0,
+    "watchdog_count": 11
+  },
+  "blocked": {
+    "frames": 1,
+    "pixels": 0,
+    "halt": 1,
+    "watchdog_count": 999999
+  },
+  "scope": "2-million simulated clock checkpoint; actual FAT/scaler/watchdog with peripheral models, not physical board timing"
+}

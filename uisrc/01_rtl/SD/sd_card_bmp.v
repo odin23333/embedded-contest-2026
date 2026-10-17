@@ -46,7 +46,9 @@ wire key_next_debounced;
 assign key_next_press=EXTERNAL_CONTROL?next_cmd:key_next_debounced;
 assign backend_busy=(PREFETCH ? (switch_requested || (!display_valid && load_busy)) : load_busy)|storage_halt|storage_error;
 assign storage_active=!sd_init_done || !scan_done || (load_busy && (!PREFETCH || !transfer_complete));
-assign storage_progress=sd_sec_read_data_valid || sd_sec_read_end || write_finish_pulse;
+// Interpolation can emit many rows from on-chip line RAM without another SD
+// sector event. Count actual produced pixels as progress, never just a busy level.
+assign storage_progress=sd_sec_read_data_valid || sd_sec_read_end || bmp_data_wr_en || write_finish_pulse;
 assign backend_ready=scan_done && display_valid && !storage_halt && !storage_error && (PREFETCH ? !switch_requested : (bmp_ready && !load_busy));
 assign multiple=(img_found_count>1);
 assign pending_ready=load_busy && transfer_complete && !storage_halt && !storage_error && (!PREFETCH || !display_valid || switch_requested);

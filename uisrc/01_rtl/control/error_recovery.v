@@ -74,9 +74,9 @@ function [34:0] font;input [7:0] c;begin case(c)
  "/":font={5'b00001,5'b00010,5'b00010,5'b00100,5'b01000,5'b01000,5'b10000};
  default:font=0;endcase end endfunction
 function [7:0] hexchar;input [3:0] n;begin hexchar=n<10?8'h30+n:8'h41+n-10;end endfunction
-reg [319:0] text;reg [7:0] letter;reg [34:0] glyph;integer k,row,col;
+reg [319:0] text;reg [7:0] letter;reg [34:0] glyph;integer k;reg[2:0] row,col;reg[5:0] font_bit;
 always @*begin
- out_rgb=rgb;text=0;letter=0;glyph=0;row=0;col=0;
+ out_rgb=rgb;text=0;letter=0;glyph=0;row=0;col=0;font_bit=0;
  if(show && de && x>=8 && x<632 && y>=28 && y<70)begin
   out_rgb=retry?24'h164e63:24'h7f1d1d;
   if(y<49)begin
@@ -99,7 +99,8 @@ always @*begin
    row=(y<49?(y-32):(y-52))>>1;
    for(k=0;k<40;k=k+1)if(x>=16+12*k && x<26+12*k)begin
     letter=text>>(8*(39-k));glyph=font(letter);col=(x-16-12*k)>>1;
-    if(glyph[34-row*5-col])out_rgb=24'hffffff;
+    font_bit=6'd34-{3'd0,row}*6'd5-{3'd0,col};
+    if(glyph[font_bit])out_rgb=24'hffffff;
    end
   end
  end

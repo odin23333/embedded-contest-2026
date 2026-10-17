@@ -37,3 +37,6 @@ reports/*.ppm
 # TD root session logs
 /td_*.log
 /td_*.logw
+
+# Generated bilinear pixel fixtures
+reports/quality_*/
