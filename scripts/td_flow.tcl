@@ -169,6 +169,9 @@ proc opt_place_fun {} {
   }
 
 ### Editable zone for opt_place ###
+  # Match the saved GUI strategy: prioritize timing with the existing clocks.
+  set_param place effort high
+  set_param place opt_timing high
   place
   update_timing -mode manhattan
   report_timing_summary -file ${prj_name}_place.timing

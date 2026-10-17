@@ -18,5 +18,10 @@
     "test": "error_recovery_tb",
     "result": "PASS",
     "scope": "fresh independent package source"
+  },
+  {
+    "test": "playback_feedback_tb",
+    "result": "PASS",
+    "scope": "fresh independent package source"
   }
 ]

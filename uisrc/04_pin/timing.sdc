@@ -33,3 +33,5 @@ set_false_path -to [get_regs {reader_retirement/sync/meta*}]
 
 # Error banner CDC: constrain the stable second stage, exempt only first capture.
 set_false_path -to [get_regs {diagnostic_sync/meta*}]
+
+set_false_path -to [get_regs {feedback_sync/meta*}]

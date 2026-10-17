@@ -13,7 +13,7 @@ wire emergency,muted,auto_enabled,next_event,next_valid,pending;
 wire valid,busy,ready,multiple;reg finish=0,tick=0;
 wire [1:0] wrbuf,dispbuf;wire [3:0] statecode;wire wrreq,wen,ncs,dclk,mosi;wire [31:0] data;
 mode_control modes(clk,~rst,pressed[0],pressed[1],pressed[2],pressed[3],emergency,muted,auto_enabled,next_event);
-playback_scheduler #(.AUTO_CYCLES(150)) scheduler(clk,~rst,emergency|pressed[2],auto_enabled,next_event,valid,multiple,busy,ready,next_valid,pending);
+playback_scheduler #(.AUTO_CYCLES(150)) scheduler(clk,~rst,emergency|pressed[2],auto_enabled,next_event,valid,multiple,busy,ready,next_valid,pending,);
 sd_card_bmp #(.EXTERNAL_CONTROL(1),.CLK_FREQ_HZ(1000),.SCAN_MAX_SECTOR(100)) backend(
  .clk(clk),.rst(rst),.storage_halt(1'b0),.key_next(1'b1),.key_auto(1'b1),.next_cmd(next_valid&&ready),.block_cmd(emergency|pressed[2]),.frame_tick(tick),
  .backend_busy(busy),.backend_ready(ready),.multiple(multiple),.state_code(statecode),.bmp_width(16'd640),.bmp_height(16'd480),

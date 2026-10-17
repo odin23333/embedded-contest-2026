@@ -10,7 +10,7 @@ sd_card_bmp #(.EXTERNAL_CONTROL(1),.PREFETCH_ENABLED(1),.CLK_FREQ_HZ(1000),.SCAN
  .clk(clk),.rst(rst),.next_cmd(request&&accept),.block_cmd(pause),.frame_tick(tick&&(!valid||pause||permit)),.storage_halt(halt),
  .key_next(1'b1),.key_auto(1'b1),.pending_ready(ready),.backend_busy(busy),.backend_ready(accept),.multiple(multiple),.storage_active(active),
  .buffer_retired(retired),.display_valid(valid),.bmp_width(16'd640),.bmp_height(16'd480),.write_finish_toggle(finish),.write_buf_idx(wr),.disp_buf_idx(disp),.write_req_ack(1'b1),.SD_MISO(1'b1));
-playback_scheduler #(.AUTO_CYCLES(600)) schedule(clk,~rst,pause,auto_en,manual,valid,multiple,busy,accept,request,pending);
+playback_scheduler #(.AUTO_CYCLES(600)) schedule(clk,~rst,pause,auto_en,manual,valid,multiple,busy,accept,request,pending,);
 image_fade fade(clk,~rst,tick,valid,pause,ready,disp,24'hffffff,permit,rgb,gain);
 reg old_valid=0;reg[1:0] old_disp=0;
 always @(negedge clk)begin

@@ -4,13 +4,14 @@
 module fat32_storage_tb;
 reg clk=0,rst=1,next=0,block=0,finish=0,retired=0;
 wire req,wen,valid,pending,busy,ready,active,progress,error,multiple;
+wire [9:0] info;
 wire[1:0] wr,disp;wire[31:0] data;
 integer fc=0,frames=0,pixels=0,wait_done=0,old_req=0;
 reg[23:0] expected0[0:307199],expected1[0:307199];string dir,filename;
 always #5 clk=~clk;
 always @(posedge clk)if(rst)fc<=0;else if(fc==19)fc<=0;else fc<=fc+1;
 sd_card_bmp #(.EXTERNAL_CONTROL(1),.PREFETCH_ENABLED(1),.IMAGE_SCALING_ENABLED(1),.FAT32_ENABLED(1),.CLK_FREQ_HZ(1000)) dut(
- .clk(clk),.rst(rst),.key_next(1'b1),.key_auto(1'b1),.next_cmd(next),.block_cmd(block),.frame_tick(fc==19),.storage_halt(1'b0),
+ .playback_info(info),.clk(clk),.rst(rst),.key_next(1'b1),.key_auto(1'b1),.next_cmd(next),.block_cmd(block),.frame_tick(fc==19),.storage_halt(1'b0),
  .storage_active(active),.storage_progress(progress),.storage_error(error),.backend_busy(busy),.backend_ready(ready),.multiple(multiple),
  .pending_ready(pending),.bmp_width(16'd640),.bmp_height(16'd480),.display_valid(valid),.write_finish_toggle(finish),
  .write_buf_idx(wr),.disp_buf_idx(disp),.write_req(req),.write_req_ack(req),.write_en(wen),.write_data(data),
@@ -34,12 +35,15 @@ initial begin
  filename=$sformatf("%0s/expected0.hex",dir);$readmemh(filename,expected0);
  filename=$sformatf("%0s/expected1.hex",dir);$readmemh(filename,expected1);
  repeat(5)@(negedge clk);rst=0;wait(valid);repeat(20)@(negedge clk);
+ if(info[1:0]!=0 || info[3:2]!=1 || info[6:4]!=2)$fatal(1,"First picture feedback wrong");
  if(frames!=1 || disp!=0 || !multiple)$fatal(1,"First FAT image not committed correctly");
  repeat(50)@(negedge clk);if(frames!=1)$fatal(1,"Read buffer not retired before reuse");
  retired=1;wait(dut.transfer_complete);repeat(3000)@(negedge clk);
+ if(info[9] || info[8:7]!=2'b11)$fatal(1,"Cache ready metadata wrong");
  if(frames!=2 || disp!=0 || pending || busy || active || !ready)$fatal(1,"FAT cache changes display or keeps watchdog active");
  block=1;press();repeat(40)@(negedge clk);if(disp!=0 || pending)$fatal(1,"Emergency accepts switch");
- block=0;press();wait(disp==1);retired=0;
+ block=0;press();wait(disp==1);#1;retired=0;
+ if(info[1:0]!=1 || info[3:2]!=0)$fatal(1,"Picture index not commit-aligned");
  repeat(100)@(negedge clk);if(frames!=2)$fatal(1,"Former display reused without retirement");
  retired=1;wait(frames==3);wait(dut.transfer_complete);press();wait(disp==0);
  $display("PASS FAT32_STORAGE: real FAT/scaler pixels, first publish after source+DDR, hidden preload, retirement, emergency blocking, cached cycle");$finish;

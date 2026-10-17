@@ -1,3 +1,7 @@
+# 最新：播放界面反馈已实板通过（2026-10-17）
+
+用户于2026-10-17逐项确认：PIC/NEXT编号及四图循环、CACHE LOAD→READY、渐变与画面稳定均正常；AUTO 05S递减、自动切图、停止回MANUAL及时间戳无遮挡均正常；应急隐藏信息栏、声画联动、静音恢复、退出恢复信息栏，以及KEY6重试隐藏后恢复首图均正常。 当前实测固件MLK_S200_TESTED.bit；错误恢复版保留于MLK_S200_RECOVERY_ROLLBACK.bit。播放信息栏的PIC/NEXT/CACHE、轮播倒计时与等待/切换提示均来自实际状态。40项播放器套件记录和34个FAT32用例的验证范围详见uisrc/06_doc/feedback_summary.json；独立工程选测5项加存储恢复集成。GUI和命令行均采用high布局及时序优化。以下为历史记录，最新构建见reports/standalone_build.json。
+
 # 最新：错误提示与恢复已实板通过（2026-10-16）
 
 用户实板确认：插卡KEY6重试后恢复首图，切图、渐变、轮播、时间戳正常；无卡KEY6显示E41，插回原卡再KEY6可恢复并清除错误；应急期间KEY6后中文、闪烁、警报、KEY4静音恢复、退出应急和图片/时间戳均正常。 KEY6仅重启读卡/图像/DDR链路，KEY16仍整机复位。实测固件MLK_S200_TESTED.bit，旧FAT32版保留于MLK_S200_FAT32_ROLLBACK.bit；重编译产物单独标识。38项播放器套件记录和34个FAT32用例通过，详见uisrc/06_doc/错误提示与恢复.md。以下条目为历史记录，最新构建见reports/standalone_build.json。

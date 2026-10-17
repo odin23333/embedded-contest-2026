@@ -2,230 +2,242 @@
   {
     "test": "video_axis_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "audio_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "bmp_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "frame_write_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "audio_modes_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "ddr_adapter_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "migration_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "playback_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "axis_buffer_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "compositor_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "system_response_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "fresh earlier recovery-candidate top; final code/capture refinements covered by recovery_top_tb and final canonical system_fault_response_tb"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "system_fault_response_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_S200\\player",
-    "scope": "fresh final canonical source rerun after promotion"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "storage_watchdog_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "stability_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "bmp_pixel_bounds_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "card_state_loss_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "source_handshake_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "bmp_fault_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "brightness_top_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_S200\\player",
-    "scope": "fresh final canonical source rerun after promotion"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "brightness_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "brightness_compositor_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "fade_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "fade_storage_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "timestamp_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "time_uart_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "rtc_time_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "i2c_enable_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "alarm_sync_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "prefetch_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "buffer_retirement_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "scaled_fault_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "scaled_bmp_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "write_start_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "recovery_top_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "error_recovery_tb",
     "result": "PASS",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player",
-    "scope": "; fresh recovery candidate, exact relevant source promoted"
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
+  },
+  {
+    "test": "playback_feedback_tb",
+    "result": "PASS",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player",
+    "scope": "; feedback task fresh records, final renderer/top rerun after optimization"
   },
   {
     "test": "fat32_tb",
     "result": "PASS",
     "cases": 34,
-    "scope": "real filesystem/scaler, sparse fragmented card fixtures; fresh recovery candidate, exact relevant source promoted",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player"
+    "scope": "real filesystem/scaler, sparse fragmented card fixtures; feedback task fresh records, final renderer/top rerun after optimization",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player"
   },
   {
     "test": "fat32_storage_tb",
     "result": "PASS",
-    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; fresh recovery candidate, exact relevant source promoted",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player"
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; feedback task fresh records, final renderer/top rerun after optimization",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player"
   },
   {
     "test": "fat32_recovery_tb",
     "result": "PASS",
-    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; fresh recovery candidate, exact relevant source promoted",
-    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_RECOVER\\player"
+    "scope": "actual FAT/scaler/storage/recovery; SD transport and DDR completion modeled; feedback task fresh records, final renderer/top rerun after optimization",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_FEEDBACK\\player"
+  },
+  {
+    "test": "playback_feedback_top_tb",
+    "result": "PASS",
+    "execution_root": "C:\\Users\\MHR\\Documents\\Codex\\MLK_S200\\player",
+    "scope": "fresh final canonical source after promotion"
   }
 ]

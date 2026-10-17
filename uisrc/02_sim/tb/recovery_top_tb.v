@@ -59,7 +59,7 @@ module sd_card_bmp #(
     input                       key_next,
     input                       key_auto,
     input next_cmd,block_cmd,frame_tick,storage_halt,buffer_retired,pixel_write_ready,
-    output storage_active,storage_progress,storage_error,output card_initialized,output [7:0] storage_error_code,
+    output storage_active,storage_progress,storage_error,output card_initialized,output [7:0] storage_error_code,output [9:0] playback_info,
     output backend_busy,backend_ready,multiple,output pending_ready,
     output [3:0]                state_code,
     input  [15:0]               bmp_width,
@@ -80,7 +80,7 @@ module sd_card_bmp #(
     input                       SD_MISO
 );
 // Card intentionally unavailable: emergency must not wait for image loading.
-assign card_initialized=0;assign storage_error_code=0;
+assign playback_info=0;assign card_initialized=0;assign storage_error_code=0;
 assign storage_active=1;assign storage_progress=0;assign storage_error=0;
 assign pending_ready=0;assign backend_busy=0;assign backend_ready=0;assign multiple=0;assign state_code=0;
 assign write_req=0;assign write_en=0;assign write_data=0;

@@ -517,6 +517,7 @@
 </File>
 <File Path="uisrc/01_rtl/SD/fat32_bmp_read.v"><FileInfo><Attr Name="UsedInSyn" Val="true"/><Attr Name="UsedInP&R" Val="true"/><Attr Name="BelongTo" Val="design_1"/><Attr Name="CompileOrder" Val="117"/></FileInfo></File>
 <File Path="uisrc/01_rtl/control/error_recovery.v"><FileInfo><Attr Name="UsedInSyn" Val="true"/><Attr Name="UsedInP&R" Val="true"/><Attr Name="BelongTo" Val="design_1"/><Attr Name="CompileOrder" Val="118"/></FileInfo></File>
+<File Path="uisrc/01_rtl/control/playback_osd.v"><FileInfo><Attr Name="UsedInSyn" Val="true"/><Attr Name="UsedInP&R" Val="true"/><Attr Name="BelongTo" Val="design_1"/><Attr Name="CompileOrder" Val="119"/></FileInfo></File>
 </Verilog>
         <ADC_FILE>
             <File Path="uisrc/04_pin/pin.adc">
@@ -565,7 +566,8 @@
         </Run>
         <Run Name="phy_1" Type="PhysicalDesign" ConstraintSet="constraint_1" Description="" SynRun="syn_1" Active="true">
             <Strategy Name="Default_PhysicalDesign_Strategy">
-            </Strategy>
+<PlaceProperty><effort>high</effort><opt_timing>high</opt_timing></PlaceProperty>
+</Strategy>
             <UserParams>
             </UserParams>
         </Run>

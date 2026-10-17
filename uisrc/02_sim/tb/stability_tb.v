@@ -10,7 +10,7 @@ wire emergency,muted,auto_enabled,next_event,next_valid,pending,valid,busy,ready
 reg finish=0,tick=0,halt=0;wire active,progress,error;
 wire [1:0] wrbuf,dispbuf;wire [3:0] code;wire wrreq,wen,ncs,dclk,mosi;wire [31:0] data;
 mode_control modes(clk,~rst,pressed[0],pressed[1],pressed[2],pressed[3],emergency,muted,auto_enabled,next_event);
-playback_scheduler #(.AUTO_CYCLES(5000)) scheduler(clk,~rst,emergency|pressed[2]|halt,auto_enabled,next_event,valid,multiple,busy,ready,next_valid,pending);
+playback_scheduler #(.AUTO_CYCLES(5000)) scheduler(clk,~rst,emergency|pressed[2]|halt,auto_enabled,next_event,valid,multiple,busy,ready,next_valid,pending,);
 sd_card_bmp #(.EXTERNAL_CONTROL(1),.CLK_FREQ_HZ(1000),.SCAN_MAX_SECTOR(100)) backend(
  .clk(clk),.rst(rst),.storage_halt(halt),.storage_active(active),.storage_progress(progress),.storage_error(error),
  .key_next(1'b1),.key_auto(1'b1),.next_cmd(next_valid&&ready),.block_cmd(emergency|pressed[2]),.frame_tick(tick),

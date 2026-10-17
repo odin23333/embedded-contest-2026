@@ -35,7 +35,7 @@ module sd_card_bmp #(
     output                      SD_MOSI,
     input                       SD_MISO,
     input buffer_retired,input pixel_write_ready,
-    output card_initialized,output [7:0] storage_error_code
+    output card_initialized,output [7:0] storage_error_code,output [9:0] playback_info
 );
 
 localparam PREFETCH = PREFETCH_ENABLED && EXTERNAL_CONTROL;
@@ -105,6 +105,8 @@ assign write_en   = bmp_data_wr_en;
 assign write_data = {bmp_data[23:16], bmp_data[15:8], bmp_data[7:0], 8'b0};
 assign auto_tick  = (auto_cnt == (CLK_FREQ_HZ - 1));
 assign next_from_current = next_index_limited(img_idx, img_found_count);
+// Read-only observation: current index changes only with a complete frame commit.
+assign playback_info={switch_requested,load_busy,transfer_complete,img_found_count,next_from_current,img_idx};
 assign write_finish_pulse = wrfin_tgl_sync[2] ^ wrfin_tgl_sync[1];
 
 key_press_debounce #(
