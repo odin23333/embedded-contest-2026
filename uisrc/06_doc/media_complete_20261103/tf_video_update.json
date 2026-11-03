@@ -1,0 +1,11 @@
+{
+  "sha256": "beff54b9cf2499bd3b5e354499d2943b89140a351da9ecbddf27cedb32bd22a3",
+  "bytes": 1920512,
+  "frames": 50,
+  "readback_verified": true,
+  "formatted": false,
+  "original_images_unchanged": true,
+  "target": "E:/MLK_TEST/CLIP.MLV",
+  "fps": 5,
+  "seconds": 10
+}

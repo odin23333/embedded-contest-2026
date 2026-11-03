@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-03",
+  "firmware": "MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit",
+  "sha256": "edd18f5b79746083f3b3d81f3cd798331e1dd13482ca88a16f7dbfe2fd88d5d5",
+  "bytes": 652904,
+  "device": "EG4D20EG176",
+  "board": "MLK-S200",
+  "td": "6.2.1",
+  "hdmi": "640x480",
+  "publication_scope": "Firmware and evidence only; root fpga_prj.al/source remain the earlier quality baseline",
+  "physical_status": "PARTIAL_ACCEPTANCE",
+  "sram_downloaded": true,
+  "flash_programmed": false,
+  "verified": [
+    "basic image playback, scaling, prefetch/fade/auto",
+    "RTC time advancing after calibration",
+    "emergency/mute and card removal/recovery",
+    "video progress/loop/pause and browser video selection",
+    "four settings save/KEY16 restore and one complete power-off plus same-SRAM-reload readback"
+  ],
+  "limits": [
+    "KEY15 replay temporarily blacks out then recovers; duration not measured",
+    "Bad-file cases skipped by user",
+    "Long-duration test deferred by user",
+    "New firmware standalone Flash boot not tested",
+    "RTC battery retention not independently confirmed"
+  ],
+  "stable_flash_unchanged": "5605e066181803426239a70b37efe6d4e6a66fb787dba26c2708596709f3dda2"
+}

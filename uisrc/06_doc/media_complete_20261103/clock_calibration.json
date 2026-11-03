@@ -1,0 +1,9 @@
+{
+  "physical_screen_verified": true,
+  "baud": 115200,
+  "rtc_write_ack": true,
+  "timezone": "Asia/Shanghai",
+  "reply_hex": "4B",
+  "port": "COM4",
+  "sent_time": "21:24:10"
+}

@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-03",
+  "status": "SESSION_ENDED_PARTIAL_ACCEPTANCE",
+  "user_connected_board_hdmi_tf": true,
+  "debug_server": "AL-LINK-FT(Local Host)",
+  "host": "127.0.0.1:5555",
+  "jtag_clock_mhz": 5,
+  "cable": "0:AL7B9EF422",
+  "observed_device": "0:EG4D20EG176",
+  "initial_error": "PRG-8000 transfer failed; reapplied Local Host and device subsequently identified",
+  "candidate_sha256": "edd18f5b79746083f3b3d81f3cd798331e1dd13482ca88a16f7dbfe2fd88d5d5",
+  "candidate_downloaded": true,
+  "physical_verified": false,
+  "flash_written": false,
+  "download": {
+    "mode": "PROGRAM_SRAM",
+    "speed_mhz": 5,
+    "device": "EG4D20EG176",
+    "duration_seconds": 5.036032,
+    "success": "GUI-1001 Downloading succeeded",
+    "progress_percent": 100,
+    "log": "sram_download.log"
+  },
+  "physical_feedback": {
+    "full_acceptance": false,
+    "manual_auto_scaling_fade_footer": "User: 正常",
+    "initial_picture": "User: 时间没显示，其他都正常",
+    "clock": "User: 时间正确且递增 after COM4 calibration",
+    "emergency_mute_exit": "User: 正常",
+    "settings_save_key16": "User replied 正常 to combined 07S/FILL/ON/ON apply/save/KEY16 restore/clock test; exact status label and individual values not separately transcribed",
+    "browser": "User only confirmed no video file; selection correspondence/KEY6 return not separately answered, pending",
+    "hotplug_emergency": "User: 正常 to remove-card/error-emergency/mute/reinsert automatic recovery combined test",
+    "video_playback_progress_loop": "User: 正常 to browser CLIP selection/moving dot/frame labels/progress100/loop reset/00:10 combined test",
+    "video_restart": "User: recovers within requested30s observation; info bar disappears; LED5/6 on LED8 off. Functional reload recovers; transient black interval remains UX limitation; exact duration not measured",
+    "video_pause_alarm_recovery": "User: 正常 to KEY14 pause/resume, KEY3 alarm during black, exit and KEY6 photo recovery combined follow-up",
+    "badfile_tests": {
+      "scope": "corrupt BMP skip, all-bad E27, missing playlist reference, corrupt CLIP fallback not physically tested",
+      "user_reply": "不做这个测试了，进行下一次",
+      "status": "USER_SKIPPED",
+      "card_fault_material_written": false
+    },
+    "long_duration_test": {
+      "user_reply": "本次先结束，长时测试待测",
+      "completed_hours": 0,
+      "status": "PENDING"
+    }
+  },
+  "clock_calibration": {
+    "physical_screen_verified": true,
+    "baud": 115200,
+    "rtc_write_ack": true,
+    "timezone": "Asia/Shanghai",
+    "reply_hex": "4B",
+    "port": "COM4",
+    "sent_time": "21:24:10"
+  },
+  "tf_video_material": {
+    "sha256": "beff54b9cf2499bd3b5e354499d2943b89140a351da9ecbddf27cedb32bd22a3",
+    "bytes": 1920512,
+    "frames": 50,
+    "readback_verified": true,
+    "formatted": false,
+    "original_images_unchanged": true,
+    "target": "E:/MLK_TEST/CLIP.MLV",
+    "fps": 5,
+    "seconds": 10
+  },
+  "power_cycle": {
+    "note": "Initial stale JTAG session produced Device not found; reapplied Local Host, reidentified EG4D20EG176, then fresh PROGRAM_SRAM success. Old success log not used as new evidence.",
+    "rtc_recalibrated_after_reconnect": false,
+    "user_power_disconnected_and_reconnected": true,
+    "candidate_sram_reloaded": true,
+    "download_success": true,
+    "settings_modified_after_reconnect": false,
+    "standalone_flash_boot_verified": false,
+    "log": "power_cycle_sram_reload.log",
+    "download_seconds": 5.007094,
+    "settings_retention_verified": true,
+    "user_readback_feedback": "正常 to unchanged 07S/FILL/ON/ON menu readback question; no separate per-field transcription",
+    "image_clock_feedback": "正常 to combined picture/switching/time question; RTC battery retention not independently verified"
+  },
+  "session_closed_by_user": true,
+  "current_requested_test_round_completed": true,
+  "full_physical_acceptance": false,
+  "report": "本轮验收汇总.md"
+}

@@ -1,5 +1,21 @@
 # MLK-S200 FPGA 图片播放器
 
+## 2026-11-03 整合固件更新
+
+最新整合固件：[MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit](uisrc/05_boot/media_complete_20261103/MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit)，用于 MLK-S200 / EG4D20EG176，TD 6.2.1、640×480。
+
+包含视频进度、坏文件跳过、统一界面和四项设置断电保存，以及此前的浏览/视频/缩放/预加载等整合功能。2026-11-03 已下载 SRAM 并完成部分实板验收；原稳定 Flash 固件保留。
+
+- [本轮实板验收汇总](uisrc/06_doc/media_complete_20261103/本轮验收汇总.md)
+- [功能与操作说明](uisrc/06_doc/media_complete_20261103/功能与操作说明.md)
+- [固件哈希](uisrc/05_boot/media_complete_20261103/SHA256SUMS.txt) · [版本信息](uisrc/05_boot/media_complete_20261103/release.json)
+
+KEY15 重播存在短暂黑屏后自行恢复的体验限制；坏文件测试由用户跳过，长时测试和新固件 Flash 独立启动待测。请先使用 PROGRAM_SRAM / 5MHz 验证，不将部分验收视为全部通过。
+
+**本次仅提交固件及验收材料；根目录 fpga_prj.al 和源码仍对应下文的画质基线，不能用它们复现这份整合固件。** 新固件的编译输入哈希和构建结果保存在同目录 build.json；未覆盖 MLK_S200_TESTED.bit 或其他回退固件。
+
+---
+
 米联客MLK-S200 / EG4D20EG176，板载25MHz输入，TD6.2.1。按米联客教程组织为独立工程，根目录 `fpga_prj.al` 使用相对路径；保持完整目录，可放在短英文路径重新打开编译。
 
 ## 当前功能

@@ -1,0 +1,14 @@
+RUN-1002 : start command "download -bit ..\..\..\..\MLK_S200\firmware\media_complete_candidate\MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit -mode jtag -spd 7 -cable 0"
+PRG-2014 : Chip validation success: EG4D20EG176
+RUN-1002 : start command "bit_to_vec -chip EG4D20EG176 -m jtag_burst -freq 5.000000 -bit ../../../../MLK_S200/firmware/media_complete_candidate/MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit"
+RUN-1003 : finish command "bit_to_vec -chip EG4D20EG176 -m jtag_burst -freq 5.000000 -bit ../../../../MLK_S200/firmware/media_complete_candidate/MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit" in  0.138045s wall, 0.125000s user + 0.093750s system = 0.218750s CPU (158.5%)
+
+RUN-1004 : used memory is 163 MB, reserved memory is 91 MB, peak memory is 178 MB
+RUN-1002 : start command "program -cable 0 -mode svf -spd 7 -p"
+RUN-1003 : finish command "program -cable 0 -mode svf -spd 7 -p" in  4.658714s wall, 0.328125s user + 0.453125s system = 0.781250s CPU (16.8%)
+
+RUN-1004 : used memory is 149 MB, reserved memory is 76 MB, peak memory is 178 MB
+RUN-1003 : finish command "download -bit ..\..\..\..\MLK_S200\firmware\media_complete_candidate\MLK_PLAYER_MEDIA_COMPLETE_CANDIDATE.bit -mode jtag -spd 7 -cable 0" in  5.036032s wall, 0.484375s user + 0.625000s system = 1.109375s CPU (22.0%)
+
+RUN-1004 : used memory is 149 MB, reserved memory is 77 MB, peak memory is 178 MB
+GUI-1001 : Downloading succeeded!
